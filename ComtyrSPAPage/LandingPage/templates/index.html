@@ -1,53 +1,105 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ComtyrSPA - Dale una nueva vida a tus excedentes</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <div class="index-carrusel">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="{% static 'img/logo.png' %}" alt="logo-comtyrSPA">
-                <p>ComtyrSPA</p>
-            </div>
-            <h1>Compra y Venta de Residuos Industriales<br>Arriendo de Maquinaria y Fletes</h1>
-            <ul>
-                <li>Sobre Nosotros</li>
-                <li>Compra y Venta</li>
-                <li>Clientes</li>
-                <li>Contacto</li>
-                <li>Arriendo Maquinaria</li>
-                <li></li>
-            </ul>
-        </nav>
-
-        
-        <div class="vista-carrusel">
-            <h2>Compra y venta de residuos industriales</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ratione esse voluptas dolores voluptate libero eius, nam quia, veniam quis, suscipit officia quaerat ad optio. Omnis delectus laboriosam accusamus quidem.</p>
-            <img src="{% static 'img/collage.png' %}" alt="residuos-industriales"> 
+    <div class="barra-informacion">
+        <h1>Compra y Venta de Residuos Industriales | Arriendo de Maquinaria y Fletes</h1>
+        <div class="informacion-contacto">
+            <div class="contacto-info"><i class="bi bi-whatsapp "></i><b>Whatsapp: </b>+569 4409 3539</div>
+            <div class="contacto-info"><i class="bi bi-instagram"></i><b>Instagram:</b>@comtyr.spa</div>
+            <div class="contacto-info"><i class="bi bi-envelope"></i><b>Gmail:</b>comtyrspa@gmail.com | rodolfoarriagada.recicla@gmail.com</div>
         </div>
-        <!-- <div class="vista-carrusel">
-            <h2>Transporte de cargas de alto tonelaje</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium velit quos eius doloribus, eligendi, modi adipisci doloremque assumenda voluptatum odit aspernatur! Commodi dolor eius quaerat atque ducimus est dolorem veritatis.</p>
-            <img src="{% static 'img/camion_pluma' %}" alt="camion-pluma"> 
-        </div>
-        <div class="vista-carrusel">
-            <h2>Arriendo maquinaria</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, dicta similique exercitationem iste delectus placeat magnam asperiores ipsa, quaerat alias quidem, dolor earum in autem nihil nam velit dolores laboriosam!</p>
-            <img src="{% static 'img/grua_horquilla' %}" alt="grua-horquilla">
-        </div> -->
-        
-        
-        
     </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="">
+            <p class="primer-parrafo-logo">ComtyrSPA</p>
+            <p class="segundo-parrafo-logo">Compañia de transporte y reciclaje</p>
+        </div>
+        <ul class="menu" id="lista-anchors">
+            <li><a href="">Sobre Nosotros</a></li>
+            <li><a href="">Compra y Venta</a></li>
+            <li><a href="">Clientes</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Arriendo Maquinaria</a></li>
+            <li><a href="">Fletes</a></li>
+        </ul>
+        <div class="menu-desplegable">
+            <button id="boton-menu">Menú</button>
+            <div class="acordeon-menu">
+                <div><a href="">Sobre Nosotros</a></div>
+                <div><a href="">Compra y Venta</a></div>
+                <div><a href="">Clientes</a></div>
+                <div><a href="">Contacto</a></div>
+                <div><a href="">Arriendo Maquinaria</a></div>
+                <div><a href="">Fletes</a></div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="index-carrusel">
+        <div class="vista-carrusel">
+            <div class="overlay"></div>
+            <div class="texto-carrusel">
+                <h2>Compra y venta de residuos industriales</h2>
+                <p>Compramos y vendemos residuos industriales no peligrosos: chatarra, fierro, aluminio, cobre, bronce y acero inoxidable. Retiramos el material, lo valorizamos y lo reincorporamos al ciclo productivo, impulsando el reciclaje.</p>
+            </div>
+            <img src="{% static 'img/collage.png' %}" alt="residuos-industriales">
+        </div>
+        <div class="vista-carrusel">
+            <div class="overlay"></div>
+            <div class="texto-carrusel">
+                <h2>Transporte de cargas de alto tonelaje</h2>
+                <p>Transporte de carga en general, con capacidades que van desde 2 hasta 15 toneladas (2, 3, 5, 10 y 15 toneladas). Realizamos fletes tanto dentro como fuera de la zona, garantizando un servicio seguro y eficiente para todo tipo de mercancías que requieran este tipo de transporte.</p>
+            </div>
+            <img src="{% static 'img/camion_pluma.png' %}" alt="camion-pluma">
+        </div>
+        <div class="vista-carrusel">
+            <div class="overlay"></div>
+            <div class="texto-carrusel">
+                <h2>Arriendo maquinaria</h2>
+                <p>Ofrecemos arriendo de camiones pluma para izaje, montaje, movimientos de tierra y transporte de carga, incluyendo carga y descarga de contenedores. También disponemos de grúas horquilla, asegurando un servicio eficiente y seguro.</p>
+            </div>
+            <img src="{% static 'img/grua_horquilla.jfif' %}" alt="grua-horquilla">
+        </div>
+    </div>
+    <main>
+        <section id="nosotros">
+
+        </section>
+        <section id="compra-y-venta">
+
+        </section>
+        <section id="fletes">
+
+        </section>
+        <section id="arriendo-maquinaria">
+
+        </section>
+        <section id="contacto-y-fletes">
+
+        </section>
+
+
+    </main>
+
+
+
 
 
 
     <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
