@@ -173,7 +173,7 @@ h1{
     font-family: "Montserrat";
     font-size: clamp(0.8rem, 2vw, 1rem);
     font-weight: 600;
-    border-bottom: 2px solid var(--verde);
+    border-bottom: 2px solid var(--blanco);
     color: var(--verde);
     border-radius: 1px;
     background-color: rgba(0, 0, 0, 0);
@@ -200,18 +200,31 @@ h1{
 }
 
 .acordeon-menu > div {
-    background-color: var(--verde);
+    background-color: var(--blanco);
     padding-top: 8px;
     padding-bottom: 8px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acordeon-menu > div > img{
+    width: 26px;
+    height: auto;
+}
+
+.acordeon-menu > div > i{
+    font-size: larger;
+    color: var(--verde);
 }
 
 .acordeon-menu > div > a{
     text-decoration: none;
-    font-family: "Open Sans";
+    font-family: "Montserrat";
     font-size: clamp(0.8rem, 1.4vw, 2rem);
     padding: 0 4px 0 4px;
-    color: var(--blanco);
+    color: var(--verde);
     font-weight: 600;
 }
 
@@ -286,4 +299,70 @@ h1{
 
 .show{
     display: block;
+}
+
+#nosotros{
+    height: 100vh;
+
+}
+
+.row-1-nosotros{
+    overflow: hidden;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.row-1-nosotros > h3{
+    font-size: clamp(1rem, 4vw, 2.6rem);
+    font-family: 'Montserrat';
+    font-weight: 800;
+    padding: 20px;
+    text-align: center;
+    color: var(--verde);
+}
+
+.rectangulo-nosotros-1{
+    height: 35vh;
+    width: calc(100% - 20px);
+    background-color: var(--verde-oscuro-2);
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-left: 20px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: calc(40px + clamp(1rem, 4vw, 4rem));
+    transition: left 2s ease-in;
+}
+
+.rectangulo-nosotros-1 > img{
+    width: 20%;
+    max-width: 300px;
+    min-width: 200px;
+    height: auto;
+    padding: 40px;
+
+}
+
+
+.rectangulo-nosotros-1 > p{
+    width: 70%;
+    padding: 10px;
+    font-family: "Open Sans";
+    color: var(--verde-oscuro);
+    font-size: clamp(0.6rem, 2vw, 1.4rem);
+    
+}
+
+.row-2-nosotros{
+    width: 100%;
+    height: 50vh;
+    background-color: red;
 }
