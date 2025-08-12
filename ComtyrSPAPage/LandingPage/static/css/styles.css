@@ -78,13 +78,13 @@ h1{
 
 .index-carrusel{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
 }
 
 .overlay{
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     max-height: 100%;
     max-width: 100%;
     background-color: rgba(88, 116, 75, 0.6);
@@ -116,6 +116,7 @@ h1{
     .logo{
         margin-left: 20px;
     }
+
 }
 
 .logo > img {
@@ -254,7 +255,7 @@ h1{
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: opacity 3s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .vista-carrusel.mostrar{
@@ -271,7 +272,7 @@ h1{
     padding-left: 12%;
     top: 60vh;
     width: 100%;
-    height: 40vh;
+    min-height: 40vh;
     background: linear-gradient(to top, rgba(88, 116, 75, 0.9) 60%, rgba(0, 0, 0, 0) 100%);
     /* background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 60%, rgba(0, 0, 0, 0) 100%); */
     padding-top: 20vh;
@@ -281,13 +282,13 @@ h1{
 .texto-carrusel > h2{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1.2rem, 2vw, 2rem);
     color: var(--blanco);
 }
 
 .texto-carrusel > p{
-    font-family: "PT Sans";
-    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(1rem, 1vw, 1.2rem);
     padding-right: 30%;
     color: var(--verde-oscuro-2);
 }
@@ -303,7 +304,6 @@ h1{
 
 #nosotros{
     height: 100vh;
-
 }
 
 .row-1-nosotros{
@@ -328,8 +328,6 @@ h1{
     height: 35vh;
     width: calc(100% - 20px);
     background-color: var(--verde-oscuro-2);
-    margin-top: auto;
-    margin-bottom: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -337,9 +335,6 @@ h1{
     border-bottom-left-radius: 20px;
     margin-left: 20px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: calc(40px + clamp(1rem, 4vw, 4rem));
-    transition: left 2s ease-in;
 }
 
 .rectangulo-nosotros-1 > img{
@@ -348,7 +343,6 @@ h1{
     min-width: 200px;
     height: auto;
     padding: 40px;
-
 }
 
 
@@ -357,12 +351,201 @@ h1{
     padding: 10px;
     font-family: "Open Sans";
     color: var(--verde-oscuro);
-    font-size: clamp(0.6rem, 2vw, 1.4rem);
-    
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
 }
 
 .row-2-nosotros{
     width: 100%;
     height: 50vh;
-    background-color: red;
+    background-color: var(--verde-oscuro-2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.rectangulo-nosotros-2{
+    height: 35vh;
+    width: calc(100% - 20px);
+    margin-right: 20px;
+    background-color: var(--blanco);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.rectangulo-nosotros-2 > img{
+    width: 20%;
+    max-width: 300px;
+    min-width: 200px;
+    height: auto;
+    padding: 40px;
+}
+
+.rectangulo-nosotros-2 > p{
+    width: 70%;
+    padding: 10px;
+    font-family: "Open Sans";
+    color: var(--verde-oscuro);
+    font-size: clamp(0.8rem, 2vw, 1.4rem);
+}
+
+@media (max-width: 600px){
+
+    #nosotros{
+        height: 200vh;
+    }
+
+    .row-1-nosotros{
+        height: 100vh;
+    }
+
+    .rectangulo-nosotros-1{
+        flex-direction: column;
+        height: 70vh;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .rectangulo-nosotros-1 > p{
+        text-align: center;
+        width: 90%;
+    }
+
+    .rectangulo-nosotros-1 > img{
+    width: 40%;
+    max-width: 300px;
+    min-width: 120px;
+    height: auto;
+    padding: 10px;
+    }
+
+    .row-2-nosotros{
+        height: 100vh;
+    }
+
+    .rectangulo-nosotros-2{
+        flex-direction: column;
+        height: 70vh;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .rectangulo-nosotros-2 > p{
+        text-align: center;
+        width: 90%;
+    }
+
+    .rectangulo-nosotros-2 > img{
+        width: 40%;
+        max-width: 300px;
+        min-width: 120px;
+        height: auto;
+        padding: 10px;
+    }    
+
+    .texto-carrusel > p{
+        padding-right: 10%;
+    }
+}
+
+#compra-y-venta{
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--verde-oscuro-2);
+}
+
+#compra-y-venta > h3{
+    font-size: clamp(1rem, 4vw, 2.6rem);
+    font-family: 'Montserrat';
+    font-weight: 800;
+    color: var(--verde);
+    text-align: center;
+    padding: 20px;
+}
+
+#compra-y-venta > p{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--blanco);
+}
+
+.contenedor-residuos{
+    margin-top: calc(15vh - 40px - clamp(1rem, 4vw, 2.6rem));
+    width: 100%;
+    min-height: 70vh;
+    position: relative;
+    display: flex;
+    gap: 1.6%;
+    justify-content: center;
+}
+
+.contenedor-residuos > div{
+    width: 14%;
+    border: 2px solid var(--verde);
+    border-radius: 2%;
+    position: relative;
+    height: auto;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-residuos > div > h4{
+    font-family: "Montserrat", sans-serif;
+    color: var(--blanco);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 8px;
+    background-color: var(--verde);
+    border-radius: 6%;
+}
+
+#residuo-chatarra{
+    background-image: url('../img/chatarra.jpg');
+    background-size: cover;
+}
+
+#residuo-aluminio{
+    background-image: url('../img/aluminio.webp');
+    background-size: cover;
+}
+
+#residuo-fierro{
+    background-image: url('../img/fierro.jpg');
+    background-size: cover;
+}
+
+#residuo-cobre{
+    background-image: url('../img/cobre.jpg');
+    background-size: cover;
+}
+
+#residuo-bronce{
+    background-image: url('../img/bronce.jpg');
+    background-size: cover;
+}
+
+#residuo-acero{
+    background-image: url('../img/acero-inoxidable.jpeg');
+    background-size: cover;
+}
+
+@media (max-width: 800px) {
+    .contenedor-residuos{
+        flex-direction: column;
+        margin-top: calc(10vh - 40px - clamp(1rem, 4vw, 2.6rem));
+        width: 100%;
+        min-height: 75vh;
+        position: relative;
+        display: flex;
+        gap: 1vh;
+        align-items: center;
+    }
+
+    .contenedor-residuos > div{
+        width: 80%;
+        height: 10vh;
+    }
 }

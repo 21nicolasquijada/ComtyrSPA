@@ -104,23 +104,7 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(rectangulo);
 
-const parrafo_rectangulo = document.querySelector(".rectangulo-nosotros-1 > p");
 
-
-
-function cambiarTextoParrafo(){
-    const html_corto_parrafo_rectangulo = "<b>ComtyrSPA</b> es una empresa comprometida con la gestión responsable de <em>residuos industriales</em>, el <em>arriendo de maquinaria</em> y la prestación de <em>servicios de fletes</em>. Nos dedicamos a ofrecer soluciones integrales que promueven el <b>reciclaje y el cuidado del medioambiente</b>, conscientes de la importancia de minimizar el impacto ambiental en todas nuestras operaciones.";
-    const html_completo_parrafo_rectangulo = "<b>ComtyrSPA</b> es una empresa comprometida con la gestión responsable de <em>residuos industriales</em>, el <em>arriendo de maquinaria</em> y la prestación de <em>servicios de fletes</em>. Nos dedicamos a ofrecer soluciones integrales que promueven el <b>reciclaje y el cuidado del medioambiente</b>, conscientes de la importancia de minimizar el impacto ambiental en todas nuestras operaciones. <br><br>Nuestro compromiso es brindar un servicio eficiente y confiable, alineado con prácticas sostenibles que contribuyen a un futuro más limpio y responsable para la industria y la comunidad.";
-
-    if (window.matchMedia("(max-width: 560px)").matches) {
-        parrafo_rectangulo.innerHTML = html_corto_parrafo_rectangulo;
-    } else if (window.matchMedia("(min-width: 561px)").matches) {
-        parrafo_rectangulo.innerHTML = html_completo_parrafo_rectangulo;
-    }
-}
-
-window.addEventListener("resize",cambiarTextoParrafo);
-window.addEventListener("load",cambiarTextoParrafo)
 
 
 
