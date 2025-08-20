@@ -66,7 +66,7 @@
                 <h2>Transporte de cargas de alto tonelaje</h2>
                 <p>Transporte de carga en general, con capacidades que van desde 2 hasta 15 toneladas.</p>
             </div>
-            <img src="{% static 'img/camion_pluma.png' %}" alt="camion-pluma">
+            <img src="{% static 'img/camiones/camion-plano.jpg' %}" alt="camion-pluma">
         </div>
         <div class="vista-carrusel">
             <div class="overlay"></div>
@@ -74,7 +74,7 @@
                 <h2>Arriendo maquinaria</h2>
                 <p>Ofrecemos arriendo de camiones pluma para izaje, montaje, movimientos de tierra y transporte de carga, incluyendo carga y descarga de contenedores.</p>
             </div>
-            <img src="{% static 'img/grua_horquilla.jfif' %}" alt="grua-horquilla">
+            <img src="{% static 'img/camiones/camiones.jpg' %}" alt="grua-horquilla">
         </div>
     </div>
 
@@ -128,19 +128,23 @@
             <p>En ComtyrSPA ofrecemos servicio de fletes con camiones pluma y camiones planos abiertos de distintas capacidades (2, 3, 5, 10 y 15 toneladas), ideales para transporte de carga en general tanto dentro como fuera de la zona. Contamos con operadores altamente capacitados y con certificaciones vigentes, garantizando un traslado seguro, eficiente y confiable para cada envío.</p>
             <div class="contenedor-fletes">
                 <div class="camion-flete">
-                    <img src="{% static 'img/grua_horquilla.jfif' %}" alt="camion-pluma">
-                    <h4>Camion Pluma</h4>
-                    <div class="camion-flete-spans">
-                        <span>Carga y descargas de contenedores maritimos</span><span>Isaje</span><span>Montaje</span><span>Dentro y fuera de la zona</span>
+                    <img src="{% static 'img/grua_horquilla.jfif' %}" alt="camion-pluma">                    
+                    <div class="contenido-camion-flete">
+                        <h4>Camion Pluma</h4>
+                        <div class="camion-flete-spans">
+                            <span>Carga y descargas de contenedores maritimos</span><span>Isaje</span><span>Montaje</span><span>Dentro y fuera de la zona</span>
+                        </div>
                     </div>
-                    
                 </div>
+
                 <div class="camion-flete">
                     <img src="{% static 'img/camion_pluma.png' %}" alt="camion-plano-abierto">
-                    <h4>Camion Plano</h4>
-                    <div class="camion-flete-spans">
-                        <span>Dentro y fuera de la zona</span><span>Para carga en general</span><span>2 toneladas</span><span>3 toneladas</span><span>5 toneladas</span><span>10 toneladas</span><span>15 toneladas</span>
-                    </div>                    
+                    <div class="contenido-camion-flete">
+                        <h4>Camion Plano</h4>
+                        <div class="camion-flete-spans">
+                            <span>2 toneladas</span><span>3 toneladas</span><span>5 toneladas</span><span>10 toneladas</span><span>15 toneladas</span><span>Dentro y fuera de la zona</span><span>Para carga en general</span>
+                        </div> 
+                    </div>
                 </div>
             </div>
         </section>
@@ -148,15 +152,26 @@
             <h3>Arriendo de maquinaria</h3>
             <p>En Comtyr SPA contamos con soluciones de arriendo de maquinaria para responder a diversas necesidades de carga y movimiento. Disponemos de camiones pluma, ideales para maniobras de izaje y para la carga y descarga de contenedores marítimos, además de grúas horquilla en modalidad de arriendo, perfectas para optimizar tiempos y seguridad en faenas logísticas.</p>
             <div class="container-carrusel-arriendo">
-                <div>
+                <div class="camion-pluma">
                     <div id="my-keen-slider" class="keen-slider">
-                        <div class="keen-slider__slide number-slide1">1</div>
-                        <div class="keen-slider__slide number-slide2">2</div>
+                        <div class="keen-slider__slide"><img class="camion-arriendo" src="{% static 'img/camiones/camion-pluma.jpg' %}"alt=""></div>
+                        <div class="keen-slider__slide"><img class="camion-arriendo" src="{% static 'img/camiones/camion-pluma-1.jpg' %}"alt=""></div>
                     </div>
+                    <p id="parrafo-camion-pluma">Ofrecemos el servicio de arriendo de <b>camión pluma</b> por hora, ideal para maniobras de carga y descarga de materiales pesados en obras de construcción. Nuestro equipo de conductores capacitados asegura un transporte seguro y eficiente.</p>
+                    <h4 class="camion-pluma-titulo ocultar">Camion Pluma</h4>
                 </div>
+                <div class="camion-pluma">
+                    <div id="my-keen-slider-2" class="keen-slider">
+                        <div class="keen-slider__slide"><img class="camion-arriendo" src="{% static 'img/camiones/camion-pluma.jpg' %}"alt=""></div>
+                        <div class="keen-slider__slide"><img class="camion-arriendo" src="{% static 'img/camiones/camion-pluma-1.jpg' %}"alt=""></div>
+                    </div>
+                    <p id="parrafo-grua-horquilla">Ofrecemos arriendo de <b>grúa horquilla</b> para la manipulación y transporte seguro de cargas dentro de bodegas, naves industriales y obras de construcción. Nuestras grúas horquilla están en óptimas condiciones, garantizando eficiencia y seguridad en cada operación.</p>
+                    <h4 class="grua-horquilla-titulo ocultar">Grúa Horquilla</h4>
+                </div>
+                <div style="width: 100%; height: 1px;"></div>
             </div>
         </section>
-        <section id="contacto-y-fletes">
+        <section id="contacto-y-clientes">
 
         </section>
 
