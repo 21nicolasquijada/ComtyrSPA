@@ -48,17 +48,17 @@ function cambiarSlide(){
 
 cambiarSlide();
 
-setInterval(cambiarSlide,9000);
+setInterval(cambiarSlide,6000);
 
 function ocultarTextoInfos() {
     const array_new_divs_info = [
-        '<a href=""><i class="bi bi-whatsapp"></i><b>Whatsapp</b></a>',
+        '<a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank"><i class="bi bi-whatsapp"></i><b>Whatsapp</b></a>',
         '<a href=""><i class="bi bi-instagram"></i><b>Instagram</b></a>',
         '<a href=""><i class="bi bi-envelope"></i><b>Gmail</b></a>',
     ];
 
     const array_new_divs_info_little_devices = [
-        '<a href=""><i class="bi bi-whatsapp"></i></a>',
+        '<a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank"><i class="bi bi-whatsapp"></i></a>',
         '<a href=""><i class="bi bi-instagram"></i></a>',
         '<a href=""><i class="bi bi-envelope"></i></a>',
     ];
@@ -163,7 +163,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.9 // porcentaje visible necesario (30%)
+  threshold: 0.9 // porcentaje visible necesario (90%)
 });
 
 observer.observe(row_nosotros_1);
@@ -185,3 +185,29 @@ function cambiarContenidoParrafoCarrusel(){
 
 window.addEventListener("resize", cambiarContenidoParrafoCarrusel);
 window.addEventListener("load", cambiarContenidoParrafoCarrusel);
+
+const row_ubicacion = document.querySelector(".row-ubicacion");
+const row_contacto = document.querySelector(".row-contacto");
+const row_ubicacion_inner = document.querySelector(".row-ubicacion-inner");
+
+const observer_contacto_nosotros = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      if(entry.target === row_ubicacion){
+        row_ubicacion_inner.classList.add("row-ubicacion-inner-rotar");
+        observer_contacto_nosotros.unobserve(row_ubicacion);
+      } else if(entry.target === row_contacto){
+        row_contacto.classList.add("cambio-bg");
+        observer_contacto_nosotros.unobserve(row_contacto);
+      }
+    }
+  })
+},{
+  threshold: 0.7
+});
+
+observer_contacto_nosotros.observe(row_ubicacion);
+observer_contacto_nosotros.observe(row_contacto);
+
+
+

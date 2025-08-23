@@ -17,7 +17,9 @@
 </head>
 <body>
     <div class="barra-informacion">
-        <h1>Compra y Venta de Residuos Industriales | Arriendo de Maquinaria y Fletes</h1>
+        <div class="marquee">
+            <h1>Compra y Venta de Residuos Industriales | Arriendo de Maquinaria y Fletes | Dale una nueva vida a tus excedentes</h1>
+        </div>
         <div class="informacion-contacto">
             <div class="contacto-info"><i class="bi bi-whatsapp "></i><b>Whatsapp: </b>+569 4409 3539</div>
             <div class="contacto-info"><i class="bi bi-instagram"></i><b>Instagram:</b>@comtyr.spa</div>
@@ -31,22 +33,20 @@
             <p class="segundo-parrafo-logo">Compañia de transporte y reciclaje</p>
         </div>
         <ul class="menu" id="lista-anchors">
-            <li><a href="">Sobre Nosotros</a></li>
-            <li><a href="">Compra y Venta</a></li>
-            <li><a href="">Clientes</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">Arriendo Maquinaria</a></li>
-            <li><a href="">Fletes</a></li>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#compra-y-venta">Compra y Venta</a></li>
+            <li><a href="#contacto-y-ubicacion">Contacto</a></li>
+            <li><a href="#arriendo-maquinaria">Arriendo Maquinaria</a></li>
+            <li><a href="#fletes">Fletes</a></li>
         </ul>
         <div class="menu-desplegable">
             <button id="boton-menu">Menú</button>
             <div class="acordeon-menu">
-                <div><a href="">Sobre Nosotros</a><img src="{% static 'img/logo.png' %}" alt=""></div>
-                <div><a href="">Compra y Venta</a></div>
-                <div><a href="">Clientes</a></div>
-                <div><a href="">Contacto</a></div>
-                <div><a href="">Arriendo Maquinaria</a></div>
-                <div><a href="">Fletes</a></div>
+                <div><a href="#nosotros">Sobre Nosotros</a><img src="{% static 'img/logo.png' %}" alt=""></div>
+                <div><a href="#compra-y-venta">Compra y Venta</a></div>
+                <div><a href="#contacto-y-ubicacion">Contacto</a></div>
+                <div><a href="#arriendo-maquinaria">Arriendo Maquinaria</a></div>
+                <div><a href="#fletes">Fletes</a></div>
             </div>
         </div>
 
@@ -128,7 +128,7 @@
             <p>En ComtyrSPA ofrecemos servicio de fletes con camiones pluma y camiones planos abiertos de distintas capacidades (2, 3, 5, 10 y 15 toneladas), ideales para transporte de carga en general tanto dentro como fuera de la zona. Contamos con operadores altamente capacitados y con certificaciones vigentes, garantizando un traslado seguro, eficiente y confiable para cada envío.</p>
             <div class="contenedor-fletes">
                 <div class="camion-flete">
-                    <img src="{% static 'img/grua_horquilla.jfif' %}" alt="camion-pluma">                    
+                    <img src="{% static 'img/camiones/camion-pluma.jpg' %}" alt="camion-pluma">                    
                     <div class="contenido-camion-flete">
                         <h4>Camion Pluma</h4>
                         <div class="camion-flete-spans">
@@ -138,7 +138,7 @@
                 </div>
 
                 <div class="camion-flete">
-                    <img src="{% static 'img/camion_pluma.png' %}" alt="camion-plano-abierto">
+                    <img src="{% static 'img/camiones/camion-plano-2.jpg' %}" alt="camion-plano-abierto">
                     <div class="contenido-camion-flete">
                         <h4>Camion Plano</h4>
                         <div class="camion-flete-spans">
@@ -171,13 +171,73 @@
                 <div style="width: 100%; height: 1px;"></div>
             </div>
         </section>
-        <section id="contacto-y-clientes">
+        <section id="contacto-y-ubicacion">
+            <div class="contenedor-contacto-ubicacion">
+                <div class="row-contacto">
+                    <h3>CONTACTO</h3>
+                    <div class="iconos-contacto">
+                        <a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank"><i class="bi bi-whatsapp "></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-envelope-paper"></i></a>
+                    </div>
+                </div>
+                <div class="row-ubicacion">
+                    <div class="row-ubicacion-inner">
+                        <div class="row-ubicacion-front">
 
+                        </div>
+                        <div class="row-ubicacion-back">
+                            <h3>UBICACIÓN OFICINA</h3>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.306968596343!2d-71.55445499999999!3d-33.022042299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689dde18029f4cb%3A0x5942e70980204614!2sCentro%20de%20Negocios%20Vi%C3%B1a!5e0!3m2!1ses-419!2scl!4v1755811433458!5m2!1ses-419!2scl"></iframe>   
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
-
-
     </main>
-
+    <footer class="footer">
+        <div class="footer-contenedor">
+            <!-- Columna 1: Logo o nombre -->
+            <div class="footer-col">
+                <div class="titulo-empresa-footer"><h2>ComtyrSPA</h2><img src="{% static 'img/logo.png' %}" alt="logo-comtyr-spa" class="logo-footer"></div>
+                <p>Dale una nueva vida a tus excedentes.</p>
+            </div>
+    
+            <!-- Columna 2: Navegación -->
+            <div class="footer-col">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Arriendo Maquinaria</a></li>
+                    <li><a href="">Transporte de carga</a></li>
+                    <li><a href="">Compra y venta</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+    
+            <!-- Columna 3: Contacto -->
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>📍 Santiago, Chile</p>
+                <p>📞 +56 9 1234 5678</p>
+                <p>✉ contacto@miempresa.cl</p>
+            </div>
+    
+            <!-- Columna 4: Redes sociales -->
+            <div class="footer-col redes">
+                <h3>Síguenos</h3>
+                <a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank">Whatsapp</a>
+                <a href="#">Instagram</a>
+                <a href="#">Gmail</a>
+            </div>
+        </div>
+    
+        <div class="footer-copy">
+            <p>© 2025 ComtyrSPA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.js"></script>
