@@ -13,6 +13,7 @@
     --verde-oscuro : #466038;
     --verde-oscuro-1: #3A4D37;
     --verde-oscuro-2: #2F3B2C;
+    --negro: #000000;
 }
 
 html{
@@ -157,7 +158,6 @@ h1{
     font-family: "Rubik", sans-serif;
     font-size: clamp(1rem, 1.2vw, 2rem);
     padding-right: 10%;
-    padding-left: 0.5%;
     color: var(--verde-oscuro-2);
     font-weight: 700;
 }
@@ -173,7 +173,6 @@ h1{
     align-items: center;
     padding: 2%;
     background-color: rgba(47, 59, 44, 0.9);
-    border-bottom: 4px solid var(--verde);
 }
 
 .logo{
@@ -322,13 +321,13 @@ h1{
 
 #nosotros{
     min-height: 100vh;
-    background-color: var(--blanco);
+    background-image: url('../img/fonto-compra-y-venta.svg');
 }
 
 .row-1-nosotros{
     overflow: hidden;
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -340,13 +339,13 @@ h1{
     font-weight: 800;
     padding: 20px;
     text-align: center;
-    color: var(--verde);
+    color: var(--blanco);
 }
 
 .rectangulo-nosotros-1{
-    height: 35vh;
+    min-height: 35vh;
     width: calc(100% - 20px);
-    background-color: var(--verde-oscuro-2);
+    background-color: var(--blanco);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -377,15 +376,14 @@ h1{
 
 .row-2-nosotros{
     width: 100%;
-    height: 50vh;
-    background-color: var(--verde-oscuro-2);
+    min-height: 50vh;
     overflow: hidden;
     display: flex;
     align-items: center;
 }
 
 .rectangulo-nosotros-2{
-    height: 35vh;
+    min-height: 35vh;
     width: calc(100% - 20px);
     margin-right: 20px;
     background-color: var(--blanco);
@@ -422,12 +420,12 @@ h1{
     }
 
     .row-1-nosotros{
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .rectangulo-nosotros-1{
         flex-direction: column;
-        height: 70vh;
+        min-height: 70vh;
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -446,12 +444,12 @@ h1{
     }
 
     .row-2-nosotros{
-        height: 100vh;
+        min-height: 100vh;
     }
 
     .rectangulo-nosotros-2{
         flex-direction: column;
-        height: 70vh;
+        min-height: 70vh;
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -477,14 +475,14 @@ h1{
 #compra-y-venta{
     min-height: 100vh;
     width: 100%;
-    background-image: url('../img/fonto-compra-y-venta.svg');
+    background-color: var(--blanco);
 }
 
 #compra-y-venta > h3{
     font-size: clamp(1rem, 4vw, 2.6rem);
     font-family: 'Montserrat';
     font-weight: 800;
-    color: var(--blanco);
+    color: var(--verde);
     text-align: center;
     padding: 20px;
 }
@@ -492,7 +490,7 @@ h1{
 #compra-y-venta > p{
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    color: var(--blanco);
+    color: var(--verde);
     font-size: clamp(1rem, 2vw, 1.4rem);
     padding-left: 20px;
     padding-right: 20px;
@@ -530,31 +528,49 @@ h1{
 #residuo-chatarra{
     background-image: url('../img/chatarra.jpg');
     background-size: cover;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s linear, opacity 0.5s linear;
 }
 
 #residuo-aluminio{
     background-image: url('../img/aluminio.webp');
     background-size: cover;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s linear, opacity 0.5s linear;
 }
 
 #residuo-fierro{
     background-image: url('../img/fierro.jpg');
     background-size: cover;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s linear, opacity 0.5s linear;
 }
 
 #residuo-cobre{
     background-image: url('../img/cobre.jpg');
     background-size: cover;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s linear, opacity 0.5s linear;
 }
 
 #residuo-bronce{
     background-image: url('../img/bronce.jpg');
     background-size: cover;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s linear, opacity 0.5s linear;
 }
 
 #residuo-acero{
     background-image: url('../img/acero-inoxidable.jpeg');
     background-size: cover;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s linear, opacity 0.5s linear;
 }
 
 @media (max-width: 800px) {
@@ -613,6 +629,14 @@ h1{
     min-height: 60vh;
     background: linear-gradient(to top, var(--verde-oscuro-2)20%, var(--blanco));
     box-shadow: 3px 3px 6px rgba(0, 0 , 0, 0.2  );
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.5s linear, opacity 0.5s linear;
+}
+
+.aparecer{
+    transform: translateY(0) !important;
+    opacity: 1 !important;
 }
 
 .camion-flete > img{
@@ -670,15 +694,14 @@ h1{
 
 #arriendo-maquinaria{
     min-height: 100vh;
-    background-image: url('../img/fondo-arriendo.svg');
-    background-color: var(--verde);
+    background-color: var(--blanco);
 }
 
 #arriendo-maquinaria > h3{
     font-size: clamp(1rem, 4vw, 2.6rem);
     font-family: 'Montserrat';
     font-weight: 800;
-    color: var(--verde);
+    color:var(--verde);
     text-align: center;
     padding: 20px;
 }
@@ -693,11 +716,17 @@ h1{
 }
 
 .container-carrusel-arriendo{
-    min-height: 70vh;
-    width: 70%;
+    width: 90%;
+    height: 900px ;
+    margin: 0 auto;
+    
+}
+
+.container-carrusel-arriendo-inner{
+    width: 100%;
+    height: 700px;
     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    
 }
 
 .camion-pluma{
@@ -715,16 +744,9 @@ h1{
     width: 40%;
     padding: 40px;
     font-family: 'Rubik','sans-serif';
-    font-weight: 600;
+    font-weight: 400;
     font-size: clamp(1em, 1.5vw, 1.5em);
-    color: var(--verde);
-}
-
-#my-keen-slider, #my-keen-slider-2{
-    width: 60% !important; 
-    height: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    color: var(--blanco);
 }
 
 .camion-arriendo{
@@ -832,15 +854,14 @@ h1{
         padding-bottom: 10px;
     }
 
+    .contenido-camion-flete > h4{
+        color: var(--blanco);
+        padding-left: 0;
+    }
+
 }
 
 @media (max-width:862px){
-
-    .container-carrusel-arriendo{
-        width: 400px;
-        max-width: 100%;
-    }
-
     .camion-pluma{
         flex-direction: column;
         height:400px;
@@ -852,13 +873,6 @@ h1{
         width: 90%;
         padding: 0;
  
-    }
-
-    #my-keen-slider, #my-keen-slider-2{
-        width: 100% !important;
-        border-radius: 0;
-        border-radius: 6px;
-        height: 370px;
     }
 }
 
@@ -907,60 +921,112 @@ h1{
 .row-contacto{
     height: 100vh;
     width: 50%;
-    background-color: var(--blanco);
+    background-image: url('../img/blurry-gradient-haikei.svg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform 3s ease-in-out;
+    row-gap: 10px;
+    opacity: 0;
+}
+
+.bounce-in-left {
+	animation: bounce-in-left 1.1s both;
+    opacity: 1;
+}
+
+@keyframes bounce-in-left {
+  0% {
+    transform: translateX(-600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(-68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(-28px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(-8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+}
+
+.row-ubicacion{
+    height: 100vh;
+    width: 50%;
+    background-image: url('../img/stacked-steps-haikei.svg');
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     opacity: 0;
-    transition: opacity 2s ease-in, transform 3s ease-in-out;
-    row-gap: 10px;
 }
 
-.row-ubicacion{
-    perspective: 1000px;
-    height: 100vh;
-    width: 50%;
-}
-
-.row-ubicacion-inner{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 1.2s;
-}
-
-.row-ubicacion-front,
-.row-ubicacion-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  backface-visibility: hidden; /* oculta la cara trasera */
-}
-
-/* Frente */
-.row-ubicacion-front {
-  background-color: var(--verde-oscuro);
-  color: white;
-}
-
-/* Reverso */
-.row-ubicacion-back {
-  background-color: var(--verde-oscuro-2);
-  transform: rotateY(180deg); /* la ponemos de espaldas al inicio */
-}
-
-.row-ubicacion-inner-rotar{
-    transform: rotateY(180deg);
-}
-
-.cambio-bg{
+.bounce-in-right {
+	animation: bounce-in-right 1.1s both;
+    animation-fill-mode: backwards;
     opacity: 1;
+
+}
+
+@keyframes bounce-in-right {
+  0% {
+    transform: translateX(600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(32px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
 }
 
 .row-contacto > h3{
@@ -987,19 +1053,19 @@ h1{
 }
 
 .iconos-contacto > a:hover{
-    background-color: var(--blanco);
+    background-color: transparent;
     color: var(--verde-oscuro);
 }
 
-.row-ubicacion-back > h3{
+.row-ubicacion > h3{
     font-family: 'Montserrat';
     font-size: clamp(1.8rem, 3vw, 3rem);
-    color: var(--verde-oscuro);
+    color: var(--blanco);
 }
 
-.row-ubicacion-back > iframe{
+.row-ubicacion> iframe{
     width: 80%;
-    height: 400px;
+    height: 700px;
 }
 
 @media (max-width: 767px){
@@ -1022,8 +1088,68 @@ h1{
     }
 }
 
+@keyframes slide{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#clientes{
+    background-color: var(--verde-oscuro-2);
+}
+
+#clientes > h3{
+    font-family: 'Rubik';
+    text-align: center;
+    padding: 40px 0;
+    color: var(--blanco);
+    font-size: clamp(2rem, 2vw, 2.5rem);
+}
+
+.logos{
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logos:before,
+.logos:after{
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+}
+
+.logos:before{
+    left: 0;
+    background: linear-gradient(to right, rgba(47,59,44), rgba(255,255,255,0));
+}
+
+.logos:after{
+    right: 0;
+    background: linear-gradient(to left, rgba(47,59,44), rgba(255,255,255,0));
+}
+
+.logos-slide{
+    display: inline-block;
+    animation: 40s slide infinite linear;
+}
+
+
+.logos-slide > img{
+    height: 50px;
+    margin: 0 40px;
+}
+
+
 .footer {
-  background-color: var(--verde-oscuro);
+  background-color: var(--verde-oscuro-2);
   color: var(--blanco);
   padding: 40px 20px;
 }
@@ -1051,7 +1177,7 @@ h1{
 }
 
 .footer-col a {
-  color: var(--verde-oscuro-2);
+  color: var(--blanco);
   font-family: 'Rubik';
   font-weight: 600;
   text-decoration: none;
@@ -1059,7 +1185,7 @@ h1{
 }
 
 .footer-col a:hover {
-  color: var(--blanco);
+  color: var(--verde);
 }
 
 .footer-copy {
@@ -1084,12 +1210,12 @@ h1{
 
 .footer-col > .titulo-empresa-footer > h2, .footer-col > h3{
     font-family: 'Montserrat';
-    color: var(--blanco);
+    color: var(--verde);
 }
 
 .footer-col > p{
     font-family: 'Rubik';
-    color: var(--verde-oscuro-2);
+    color: var(--blanco);
     font-size: 0.9rem;
     font-weight: 600;
 }
@@ -1105,4 +1231,93 @@ h1{
   .footer-contenedor {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+@media (max-height: 670px){
+    .row-1-nosotros{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .row-2-nosotros{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+[class^="number-slide"],
+[class*=" number-slide"] {
+  background: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 300px;
+  max-height: 100vh;
+}
+
+.navigation-wrapper {
+  position: relative;
+}
+
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 10px;
+  height: 10px;
+  background: var(--verde-oscuro-2);
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot--active {
+  background: var(--blanco);
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: #fff;
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: 5px;
+  fill: "#fff";
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z' %3E%3C/path%3E%3C/svg%3E");
+}
+
+.arrow--right {
+  left: auto;
+  right: 5px;
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 24 24' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.arrow--disabled.arrow--left {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='grey' viewBox='0 0 24 24' %3E%3Cpath d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z' %3E%3C/path%3E%3C/svg%3E");
+}
+
+.arrow--disabled.arrow--right {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='grey' viewBox='0 0 24 24' %3E%3Cpath d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+#my-keen-slider{
+    width: 100%;
+    height: 700px;
 }

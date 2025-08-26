@@ -64,9 +64,9 @@ function ocultarTextoInfos() {
     ];
 
     const array_old_divs_info = [
-        '<i class="bi bi-whatsapp "></i><b>Whatsapp: </b>+569 4409 3539',
-        '<i class="bi bi-instagram"></i><b>Instagram:</b>@comtyr.spa',
-        '<i class="bi bi-envelope"></i><b>Gmail:</b>comtyrspa@gmail.com | rodolfoarriagada.recicla@gmail.com',
+        '<i class="bi bi-whatsapp "></i><b>Whatsapp: +569 4409 3539</b>',
+        '<i class="bi bi-instagram"></i><b>Instagram: @comtyr.spa</b>',
+        '<i class="bi bi-envelope"></i><b>Gmail: comtyrspa@gmail.com | rodolfoarriagada.recicla@gmail.com</b>',
     ];
 
     let index = 0;
@@ -89,63 +89,63 @@ function ocultarTextoInfos() {
 window.addEventListener("resize", ocultarTextoInfos);
 window.addEventListener("load", ocultarTextoInfos);
 
-var animation = { duration: 40000, easing: (t) => t }
+// var animation = { duration: 40000, easing: (t) => t }
 
-var slider = new KeenSlider("#my-keen-slider", {
-  loop: true,
-  renderMode: "performance",
-  drag: false,
-  created(s) {
-    s.moveToIdx(5, true, animation)
-  },
-  updated(s) {
-    s.moveToIdx(s.track.details.abs + 5, true, animation)
-  },
-  animationEnded(s) {
-    s.moveToIdx(s.track.details.abs + 5, true, animation)
-  },
-})
+// var slider = new KeenSlider("#my-keen-slider", {
+//   loop: true,
+//   renderMode: "performance",
+//   drag: false,
+//   created(s) {
+//     s.moveToIdx(5, true, animation)
+//   },
+//   updated(s) {
+//     s.moveToIdx(s.track.details.abs + 5, true, animation)
+//   },
+//   animationEnded(s) {
+//     s.moveToIdx(s.track.details.abs + 5, true, animation)
+//   },
+// })
 
-var slider_2 = new KeenSlider("#my-keen-slider-2", {
-  loop: true,
-  renderMode: "performance",
-  drag: false,
-  created(s) {
-    s.moveToIdx(5, true, animation)
-  },
-  updated(s) {
-    s.moveToIdx(s.track.details.abs + 5, true, animation)
-  },
-  animationEnded(s) {
-    s.moveToIdx(s.track.details.abs + 5, true, animation)
-  },
-})
+// var slider_2 = new KeenSlider("#my-keen-slider-2", {
+//   loop: true,
+//   renderMode: "performance",
+//   drag: false,
+//   created(s) {
+//     s.moveToIdx(5, true, animation)
+//   },
+//   updated(s) {
+//     s.moveToIdx(s.track.details.abs + 5, true, animation)
+//   },
+//   animationEnded(s) {
+//     s.moveToIdx(s.track.details.abs + 5, true, animation)
+//   },
+// })
 
-const parrafoCamionPluma = document.getElementById("parrafo-camion-pluma");
-const parrafoGruaHorquilla = document.getElementById("parrafo-grua-horquilla");
-const camionPlumaTitulo = document.querySelector(".camion-pluma-titulo");
-const gruaHorquillaTitulo = document.querySelector(".grua-horquilla-titulo");
+// const parrafoCamionPluma = document.getElementById("parrafo-camion-pluma");
+// const parrafoGruaHorquilla = document.getElementById("parrafo-grua-horquilla");
+// const camionPlumaTitulo = document.querySelector(".camion-pluma-titulo");
+// const gruaHorquillaTitulo = document.querySelector(".grua-horquilla-titulo");
 
-function textoCarrusel(){
-  if(window.matchMedia("(max-width:862px)").matches){
-    if(camionPlumaTitulo.classList.contains("ocultar")){
-      camionPlumaTitulo.classList.remove("ocultar");
-      parrafoCamionPluma.classList.add("ocultar");
-      gruaHorquillaTitulo.classList.remove("ocultar");
-      parrafoGruaHorquilla.classList.add("ocultar");
-    }
-  } else{
-    if(parrafoCamionPluma.classList.contains("ocultar")){
-      parrafoCamionPluma.classList.remove("ocultar");
-      camionPlumaTitulo.classList.add("ocultar");
-      parrafoGruaHorquilla.classList.remove("ocultar");
-      gruaHorquillaTitulo.classList.add("ocultar");
-    }
-  }
-}
+// function textoCarrusel(){
+//   if(window.matchMedia("(max-width:862px)").matches){
+//     if(camionPlumaTitulo.classList.contains("ocultar")){
+//       camionPlumaTitulo.classList.remove("ocultar");
+//       parrafoCamionPluma.classList.add("ocultar");
+//       gruaHorquillaTitulo.classList.remove("ocultar");
+//       parrafoGruaHorquilla.classList.add("ocultar");
+//     }
+//   } else{
+//     if(parrafoCamionPluma.classList.contains("ocultar")){
+//       parrafoCamionPluma.classList.remove("ocultar");
+//       camionPlumaTitulo.classList.add("ocultar");
+//       parrafoGruaHorquilla.classList.remove("ocultar");
+//       gruaHorquillaTitulo.classList.add("ocultar");
+//     }
+//   }
+// }
 
-window.addEventListener("resize",textoCarrusel);
-window.addEventListener("load",textoCarrusel);
+// window.addEventListener("resize",textoCarrusel);
+// window.addEventListener("load",textoCarrusel);
 
 
 const rectangulo = document.querySelector('.rectangulo-nosotros-1');
@@ -188,17 +188,23 @@ window.addEventListener("load", cambiarContenidoParrafoCarrusel);
 
 const row_ubicacion = document.querySelector(".row-ubicacion");
 const row_contacto = document.querySelector(".row-contacto");
-const row_ubicacion_inner = document.querySelector(".row-ubicacion-inner");
+const camiones_fletes_divs = document.querySelectorAll('.camion-flete');
+const residuo_divs = document.querySelectorAll(".contenedor-residuos > div");
+
 
 const observer_contacto_nosotros = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       if(entry.target === row_ubicacion){
-        row_ubicacion_inner.classList.add("row-ubicacion-inner-rotar");
-        observer_contacto_nosotros.unobserve(row_ubicacion);
+          row_ubicacion.classList.add("bounce-in-right");
+          observer_contacto_nosotros.unobserve(row_ubicacion);
       } else if(entry.target === row_contacto){
-        row_contacto.classList.add("cambio-bg");
-        observer_contacto_nosotros.unobserve(row_contacto);
+          row_contacto.classList.add("bounce-in-left");
+          observer_contacto_nosotros.unobserve(row_contacto);
+      } else if(entry.target.classList.contains('camion-flete')){
+          entry.target.classList.add('aparecer');
+      } else if(entry.target.id === 'residuo-aluminio' || 'residuo-chatarra' || 'residuo-fierro' || 'residuo-cobre' || 'residuo-bronce' || 'residuo-acero'){
+          entry.target.classList.add('aparecer');
       }
     }
   })
@@ -206,8 +212,110 @@ const observer_contacto_nosotros = new IntersectionObserver((entries)=>{
   threshold: 0.7
 });
 
+camiones_fletes_divs.forEach((div)=>{
+  observer_contacto_nosotros.observe(div);
+});
+
+residuo_divs.forEach((div)=>{
+  observer_contacto_nosotros.observe(div);
+});
+
 observer_contacto_nosotros.observe(row_ubicacion);
 observer_contacto_nosotros.observe(row_contacto);
 
+function navigation(slider) {
+  let wrapper, dots, arrowLeft, arrowRight
 
+  function markup(remove) {
+    wrapperMarkup(remove)
+    dotMarkup(remove)
+    arrowMarkup(remove)
+  }
+
+  function removeElement(elment) {
+    elment.parentNode.removeChild(elment)
+  }
+  function createDiv(className) {
+    var div = document.createElement("div")
+    var classNames = className.split(" ")
+    classNames.forEach((name) => div.classList.add(name))
+    return div
+  }
+
+  function arrowMarkup(remove) {
+    if (remove) {
+      removeElement(arrowLeft)
+      removeElement(arrowRight)
+      return
+    }
+    arrowLeft = createDiv("arrow arrow--left")
+    arrowLeft.addEventListener("click", () => slider.prev())
+    arrowRight = createDiv("arrow arrow--right")
+    arrowRight.addEventListener("click", () => slider.next())
+
+    wrapper.appendChild(arrowLeft)
+    wrapper.appendChild(arrowRight)
+  }
+
+  function wrapperMarkup(remove) {
+    if (remove) {
+      var parent = wrapper.parentNode
+      while (wrapper.firstChild)
+        parent.insertBefore(wrapper.firstChild, wrapper)
+      removeElement(wrapper)
+      return
+    }
+    wrapper = createDiv("navigation-wrapper")
+    slider.container.parentNode.appendChild(wrapper)
+    wrapper.appendChild(slider.container)
+  }
+
+  function dotMarkup(remove) {
+    if (remove) {
+      removeElement(dots)
+      return
+    }
+    dots = createDiv("dots")
+    slider.track.details.slides.forEach((_e, idx) => {
+      var dot = createDiv("dot")
+      dot.addEventListener("click", () => slider.moveToIdx(idx))
+      dots.appendChild(dot)
+    })
+    wrapper.appendChild(dots)
+  }
+
+  function updateClasses() {
+    var slide = slider.track.details.rel
+    slide === 0
+      ? arrowLeft.classList.add("arrow--disabled")
+      : arrowLeft.classList.remove("arrow--disabled")
+    slide === slider.track.details.slides.length - 1
+      ? arrowRight.classList.add("arrow--disabled")
+      : arrowRight.classList.remove("arrow--disabled")
+    Array.from(dots.children).forEach(function (dot, idx) {
+      idx === slide
+        ? dot.classList.add("dot--active")
+        : dot.classList.remove("dot--active")
+    })
+  }
+
+  slider.on("created", () => {
+    markup()
+    updateClasses()
+  })
+  slider.on("optionsChanged", () => {
+    console.log(2)
+    markup(true)
+    markup()
+    updateClasses()
+  })
+  slider.on("slideChanged", () => {
+    updateClasses()
+  })
+  slider.on("destroyed", () => {
+    markup(true)
+  })
+}
+
+var slider = new KeenSlider("#my-keen-slider", {}, [navigation])
 
