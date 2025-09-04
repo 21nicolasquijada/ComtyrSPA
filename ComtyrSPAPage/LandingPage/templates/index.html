@@ -8,10 +8,12 @@
     <title>Comtyr SPA - Dale una nueva vida a tus excedentes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
@@ -37,6 +39,7 @@
             <li><a href="#contacto-y-ubicacion">Contacto</a></li>
             <li><a href="#arriendo-maquinaria">Arriendo Maquinaria</a></li>
             <li><a href="#fletes">Fletes</a></li>
+            <li><a href="#seguridad">Normativas</a></li>
         </ul>
         <div class="menu-desplegable">
             <button id="boton-menu">Menú</button>
@@ -46,6 +49,7 @@
                 <div><a href="#contacto-y-ubicacion">Contacto</a></div>
                 <div><a href="#arriendo-maquinaria">Arriendo Maquinaria</a></div>
                 <div><a href="#fletes">Fletes</a></div>
+                <div><a href="#seguridad">Normativas</a></div>
             </div>
         </div>
 
@@ -173,8 +177,8 @@
                     <h3>CONTACTO</h3>
                     <div class="iconos-contacto">
                         <a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank"><i class="bi bi-whatsapp "></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-envelope-paper"></i></a>
+                        <a href="https://www.instagram.com/comtyr.spa/" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=comtyrspa@gmail.com" target="_blank"><i class="bi bi-envelope-paper"></i></a>
                     </div>
                 </div>
                 <div class="row-ubicacion">
@@ -183,8 +187,41 @@
                 </div>
             </div>
         </section>
+        <section id="comtyr-spa-slogan">
+            <video autoplay muted loop playsinline>
+                <source src="{% static 'img/video-comtyr-slogan.mp4' %}" type="video/mp4">
+            </video>
+            <div class="logo-slogan">
+                <div class="logo-div">
+                    <img src="{% static 'img/logo.png' %}" alt="logo-comtyr">
+                </div>
+                <div class="slogan-div">
+                    <h4>Dale una nueva vida a tus excedentes</h4>
+                </div>
+                
+            </div>
+        </section>
+        <section id="seguridad">
+            <div class="seguridad-container">
+                <div class="div-seguridad">
+                    <h4>Normativas de Seguridad</h4>
+                    <div class="contenedor-slider-cards">
+                        <div id="my-keen-slider-1" class="keen-slider">
+                            <div class="keen-slider__slide slide"><div class="card-slide-content"><i class="bi bi-shield-check"></i><h5>Seguridad como prioridad</h5><p>En Comtyr SPA la seguridad es el pilar de cada operación. Aplicamos protocolos rigurosos que garantizan la protección de nuestros colaboradores, clientes y equipos en todo momento</p></div></div>
+                            <div class="keen-slider__slide slide"><div class="card-slide-content"><i class="bi bi-patch-check"></i><h5>Certificación SINADER</h5><p>Contamos con certificaciones SINADER que respaldan nuestro cumplimiento con las normativas vigentes en Chile, asegurando transparencia, responsabilidad y confianza en cada servicio.</p></div></div>
+                            <div class="keen-slider__slide slide"><div class="card-slide-content"><i class="bi bi-person-check"></i><h5>Operadores Certificados</h5><p>Nuestros operadores poseen certificaciones actualizadas, avalando su preparación técnica y capacidad para ejecutar cada tarea con eficiencia y seguridad.</p></div></div>
+                            <div class="keen-slider__slide slide"><div class="card-slide-content"><i class="bi bi-book"></i><h5>Capacitación Continua</h5><p>Implementamos programas de capacitación constantes para reforzar las competencias de nuestro equipo y mantener siempre altos estándares de seguridad y calidad.</p></div></div>
+                            <div class="keen-slider__slide slide"><div class="card-slide-content"><i class="bi bi-building-check"></i><h5>Cumplimiento Legal</h5><p>Todas nuestras operaciones se desarrollan bajo normativas vigentes nacionales e internacionales, garantizando un servicio responsable y alineado con la legislación actual.</p></div></div>
+                            <div class="keen-slider__slide slide"><div class="card-slide-content"><i class="bi bi-hand-thumbs-up"></i><h5>Prevención y Confianza</h5><p>Fomentamos una cultura de seguridad dentro de la empresa, donde cada colaborador se involucra activamente en la prevención de riesgos, fortaleciendo la confianza con nuestros clientes.</p></div></div>
+                        </div>
+
+                        <div class="arrow-slider arrow-left"></div>
+                        <div class="arrow-slider arrow-right"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="clientes">
-            <h3>CLIENTES</h3>
             <div class="logos">
                 <div class="logos-slide">
                     <img src="{% static 'img/logo-clientes/logo-altometal.svg' %}" alt="logo-altometal">
@@ -199,13 +236,13 @@
                     <img src="{% static 'img/logo-clientes/logo-nexxo.png' %}" alt="logo-nexxo">
                     <img src="{% static 'img/logo-clientes/logo-noval.png' %}" alt="logo-noval">
                     <img src="{% static 'img/logo-clientes/logo-oxiquim.svg' %}" alt="logo-oxiquim">
-                    <img src="{% static 'img/logo-clientes/logo-ramco.png' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-raspel.png' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-rvc.png' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-tricolor.jpg' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-vimac.svg' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-vmc.svg' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-playamansa.webp' %}" alt="logo-altometal">
+                    <img src="{% static 'img/logo-clientes/logo-ramco.png' %}" alt="logo-ramco">
+                    <img src="{% static 'img/logo-clientes/logo-raspel.png' %}" alt="logo-raspel">
+                    <img src="{% static 'img/logo-clientes/logo-rvc.png' %}" alt="logo-rvc">
+                    <img src="{% static 'img/logo-clientes/logo-tricolor.jpg' %}" alt="logo-tricolor">
+                    <img src="{% static 'img/logo-clientes/logo-vimac.svg' %}" alt="logo-vimac">
+                    <img src="{% static 'img/logo-clientes/logo-vmc.svg' %}" alt="logo-vmc">
+                    <img src="{% static 'img/logo-clientes/logo-playamansa.webp' %}" alt="logo-playamansa">
                 </div>
                 <div class="logos-slide">
                     <img src="{% static 'img/logo-clientes/logo-altometal.svg' %}" alt="logo-altometal">
@@ -220,14 +257,14 @@
                     <img src="{% static 'img/logo-clientes/logo-nexxo.png' %}" alt="logo-nexxo">
                     <img src="{% static 'img/logo-clientes/logo-noval.png' %}" alt="logo-noval">
                     <img src="{% static 'img/logo-clientes/logo-oxiquim.svg' %}" alt="logo-oxiquim">
-                    <img src="{% static 'img/logo-clientes/logo-ramco.png' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-raspel.png' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-rvc.png' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-tricolor.jpg' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-vimac.svg' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-vmc.svg' %}" alt="logo-altometal">
-                    <img src="{% static 'img/logo-clientes/logo-playamansa.webp' %}" alt="logo-altometal">
-                </div>                
+                    <img src="{% static 'img/logo-clientes/logo-ramco.png' %}" alt="logo-ramco">
+                    <img src="{% static 'img/logo-clientes/logo-raspel.png' %}" alt="logo-raspel">
+                    <img src="{% static 'img/logo-clientes/logo-rvc.png' %}" alt="logo-rvc">
+                    <img src="{% static 'img/logo-clientes/logo-tricolor.jpg' %}" alt="logo-tricolor">
+                    <img src="{% static 'img/logo-clientes/logo-vimac.svg' %}" alt="logo-vimac">
+                    <img src="{% static 'img/logo-clientes/logo-vmc.svg' %}" alt="logo-vmc">
+                    <img src="{% static 'img/logo-clientes/logo-playamansa.webp' %}" alt="logo-playamansa">
+                </div>              
             </div>            
         </section>
     </main>
@@ -243,29 +280,29 @@
             <div class="footer-col">
                 <h3>Enlaces</h3>
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Arriendo Maquinaria</a></li>
-                    <li><a href="">Transporte de carga</a></li>
-                    <li><a href="">Compra y venta</a></li>
+                    <li><a href="#arriendo-maquinaria">Arriendo Maquinaria</a></li>
+                    <li><a href="#fletes">Transporte de carga</a></li>
+                    <li><a href="#compra-y-venta">Compra y venta</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#contacto-y-ubicacion">Contacto</a></li>
+                    <li><a href="#seguridad">Normativas</a></li>
                 </ul>
             </div>
     
             <!-- Columna 3: Contacto -->
             <div class="footer-col">
                 <h3>Contacto</h3>
-                <p>📍 Santiago, Chile</p>
-                <p>📞 +56 9 1234 5678</p>
-                <p>✉ contacto@miempresa.cl</p>
+                <p>📍 Av 1 Norte 461 Oficina 703 Viña del Mar</p>
+                <p>📞 +56 9 4409 3539</p>
+                <p>✉ comtyrspa@gmail.com</p>
             </div>
     
             <!-- Columna 4: Redes sociales -->
             <div class="footer-col redes">
                 <h3>Síguenos</h3>
                 <a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank">Whatsapp</a>
-                <a href="#">Instagram</a>
-                <a href="#">Gmail</a>
+                <a href="https://www.instagram.com/comtyr.spa/" target="_blank">Instagram</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=comtyrspa@gmail.com" target="_blank">Gmail</a>
             </div>
         </div>
     
@@ -274,7 +311,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/keen-slider@latest/keen-slider.js"></script> -->
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 

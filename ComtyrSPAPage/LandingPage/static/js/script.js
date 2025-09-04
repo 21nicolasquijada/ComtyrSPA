@@ -319,3 +319,42 @@ function navigation(slider) {
 
 var slider = new KeenSlider("#my-keen-slider", {}, [navigation])
 
+var slider_1 = new KeenSlider("#my-keen-slider-1", {
+  loop: true,
+  mode: "free",
+  slides: {
+    perView: 3,
+    spacing: 10, // separación en p
+  },
+});
+
+function sliderResponsive() {
+  if(window.matchMedia("(min-width:1400px)").matches){
+    slider_1.update({
+      slides: { perView: 3, spacing: 10}
+    })
+  }
+  else if (window.matchMedia("(min-width: 990px)").matches) {
+    slider_1.update({
+      slides: { perView: 2, spacing: 10 },
+    });
+  } else if (window.matchMedia("(min-width: 660px)").matches) {
+    slider_1.update({
+      slides: { perView: 1, spacing: 10 },
+    });
+  } else {
+    slider_1.update({
+      slides: { perView: 1, spacing: 10 },
+    });
+  }
+}
+
+window.addEventListener("resize", sliderResponsive);
+window.addEventListener("load", sliderResponsive);
+
+document.querySelector(".arrow-left").addEventListener("click", () =>
+  slider_1.prev()
+);
+document.querySelector(".arrow-right").addEventListener("click", () =>
+  slider_1.next()
+);

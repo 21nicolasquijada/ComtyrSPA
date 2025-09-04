@@ -921,7 +921,7 @@ h1{
 .row-contacto{
     height: 100vh;
     width: 50%;
-    background-image: url('../img/blurry-gradient-haikei.svg');
+    background-color: var(--blanco);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1066,6 +1066,7 @@ h1{
 .row-ubicacion> iframe{
     width: 80%;
     height: 700px;
+    margin: 10px;
 }
 
 @media (max-width: 767px){
@@ -1099,6 +1100,7 @@ h1{
 
 #clientes{
     background-color: var(--verde-oscuro-2);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
 #clientes > h3{
@@ -1138,7 +1140,7 @@ h1{
 
 .logos-slide{
     display: inline-block;
-    animation: 40s slide infinite linear;
+    animation: 30s slide infinite linear;
 }
 
 
@@ -1320,4 +1322,249 @@ h1{
 #my-keen-slider{
     width: 100%;
     height: 700px;
+}
+
+#comtyr-spa-slogan{
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-slogan{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 90%;
+    background-color: var(--blanco);
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.slogan-div{
+    width: 70%;
+}
+
+.slogan-div > h4 {
+    font-family: 'Lato', 'sans-serif';
+    font-size: 6vw;
+    font-weight: 800;
+    background: url('../img/fonto-compra-y-venta.svg');
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 100%;
+}
+
+.logo-div{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-div > img{
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+}
+
+@media (max-width: 770px) {
+    .logo-slogan {
+        flex-direction: column;
+        min-height: 40vh;
+        justify-content: center;
+    }
+
+    .logo-div {
+        height: 70%;
+        width: 60%;
+    }
+
+    .slogan-div {
+        width: 90%;
+    }
+
+    .slogan-div>h4 {
+        text-align: center;
+        font-size: 7vw;
+    }
+
+    .logos:before,
+    .logos:after {
+        width: 150px;
+    }
+}
+
+#comtyr-spa-slogan video{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#seguridad{
+    min-height: 100vh;
+    background-color: var(--verde);
+}
+
+.seguridad-container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-seguridad{
+    width: 80%;
+    height: 700px;
+    background-color: var(--verde-oscuro-2);
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.contenedor-slider-cards{
+    width: 82%;
+    height: 70%;
+    background-image: url('../img/fonto-compra-y-venta.svg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.contenedor-slider-cards::before {
+  content: "◀"; /* Unicode de flecha izquierda */
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-right: 4px;
+  border-radius: 6px;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  z-index: 99;
+  color: var(--verde);
+}
+
+.contenedor-slider-cards::after {
+  content: "▶"; /* Unicode de flecha izquierda */
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-left: 4px;
+  border-radius: 6px;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  z-index: 99;
+  color: var(--verde);
+}
+
+@media (max-width:460px){
+    .contenedor-slider-cards::before {
+        left: 2%;
+    }
+    .contenedor-slider-cards::after {
+        right: 2%;
+    }
+}
+
+.div-seguridad > h4{
+    font-family: 'Rubik';
+    text-align: center;
+    font-size: clamp(2rem, 1.8vw, 1.5rem);
+    padding: 10px;
+    margin-bottom: 40px;
+    position: relative;
+    color: var(--verde);
+
+}
+
+#my-keen-slider-1{
+    width: 100%;
+    height: 100%;
+}
+
+.slide{
+    background-color: var(--cafe);
+    border-radius: 10px;
+    background-color: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-slider {
+  position: absolute;
+  top: 50%;
+  width: 2rem;
+  height: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* izquierda */
+.arrow-left {
+  left: 2%;
+}
+
+/* derecha */
+.arrow-right {
+  right: 2%;
+}
+
+.card-slide-content{
+    width: 94%;
+    height: 94%;
+    border-radius: 10px;
+    border: 4px solid var(--verde);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../img/stacked-fondo-2.svg');
+}
+
+.card-slide-content > i{
+    font-size: clamp(4rem, 5vw, 5rem);
+    color: var(--verde-oscuro-2);
+}
+
+.card-slide-content > h5{
+    font-family: 'Rubik', 'sans-serif';
+    font-size: clamp(0.8rem,1.6vw,1.2rem);
+    color: var(--verde-oscuro-2);
+}
+
+.card-slide-content > p{
+    font-family: 'Montserrat', 'sans-serif';
+    padding: 4%;
+    color: var(--verde-oscuro-2);
+    font-weight: 500;
+    text-align: center;
+
+}
+
+@media (max-width: 440px){
+    .contenedor-slider-cards{
+        padding: 10px;
+    }
 }
