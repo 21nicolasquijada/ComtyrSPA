@@ -142,7 +142,7 @@ h1{
     padding-top: 4vh;
     padding-bottom: 4vh;
     z-index: 600;
-    background-color: var(--verde);
+    background-color: rgba(47, 59, 44, 0.9);
     border-top-right-radius: 80px;
 }
 
@@ -158,7 +158,7 @@ h1{
     font-family: "Rubik", sans-serif;
     font-size: clamp(1rem, 1.2vw, 2rem);
     padding-right: 10%;
-    color: var(--verde-oscuro-2);
+    color: var(--verde);
     font-weight: 700;
 }
 
@@ -178,20 +178,22 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 30%;
     height: 100%;
 }
 
 .logo > img {
-    width: 100%;
+    width: 120px;
     max-height: 60%;
 }
 
-@media (min-width:800px){
+@media (max-width:800px){
     .logo > img{
-        width: 120px;
+        width: 90px;
     }
 }
+
 
 .primer-parrafo-logo{
     text-align: center;
@@ -1342,7 +1344,7 @@ h1{
     flex-direction: row;
     align-items: center;
     min-width: 90%;
-    background-color: var(--blanco);
+    background: linear-gradient(to left, var(--blanco) 85%, transparent 100%);
     padding: 20px;
     border-radius: 10px;
     justify-content: space-between;
@@ -1495,7 +1497,7 @@ h1{
     padding: 10px;
     margin-bottom: 40px;
     position: relative;
-    color: var(--verde);
+    color: var(--blanco);
 
 }
 

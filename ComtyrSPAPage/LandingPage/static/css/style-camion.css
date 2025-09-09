@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+:root{
+    --blanco: #faf3e0;
+    --verde :#58744B;
+    --cafe: #42251F;
+    --verde-oscuro : #466038;
+    --verde-oscuro-1: #3A4D37;
+    --verde-oscuro-2: #2F3B2C;
+    --negro: #000000;
+}
+
+.navbar{
+    z-index: 1000;
+    width: 100%;
+    height: 10vh;
+    display: flex; 
+    align-items: center;
+    background-color: rgba(47, 59, 44, 0.9);
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 100%;
+}
+
+.logo > a {
+  width: 60px;
+  height: 50px;
+}
+
+.logo > a > img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:800px){
+    .logo{
+        width: 20%;
+    }
+
+    .logo > a{
+        width: 50px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 546px){
+    .logo{
+        width: 30%;
+    }
+}
+
+.menu{
+    display: flex;
+    margin-left: auto;
+    gap: 1.2rem;
+    list-style: none;
+    margin-right: 10px;
+    
+}
+
+.menu-desplegable{
+    margin-left: auto;
+    display: none;
+    position: relative;
+}
+
+#boton-menu{
+    margin-left: auto;
+    width: 200px;
+    height: 30px;
+    border: none;
+    font-family: "Montserrat";
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-weight: 600;
+    border-bottom: 2px solid var(--blanco);
+    color: var(--verde);
+    border-radius: 1px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.acordeon-menu{
+    overflow: hidden;
+    position: absolute;
+    width: 200px;
+    top: 100%;
+    left: 0;
+    max-height: 0;
+    transition: max-height 0.1s ease-in-out;
+}
+
+@media (max-width: 380px) {
+    #boton-menu{
+        width: 160px;
+    }
+
+    .acordeon-menu{
+        width: 160px;
+    }
+}
+
+.acordeon-menu > div {
+    background-color: var(--blanco);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acordeon-menu > div > img{
+    width: 26px;
+    height: auto;
+}
+
+.acordeon-menu > div > i{
+    font-size: larger;
+    color: var(--verde);
+}
+
+.acordeon-menu > div > a{
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-size: clamp(0.8rem, 1.4vw, 2rem);
+    padding: 0 4px 0 4px;
+    color: var(--verde);
+    font-weight: 600;
+}
+
+.navbar > ul > li > a{
+    all: unset;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+}
+
+.navbar > ul > li > a:hover{
+    color: var(--verde);
+}
+
+.navbar > ul > li{
+    white-space: nowrap;
+    font-family: "Montserrat";
+    font-weight: 700;
+    color: var(--blanco);
+    font-size: clamp(0.4rem, 1.2vw, 1.08rem);
+}
+
+.ocultar{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.container-camion{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+
+.primer-parrafo-logo{
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: clamp(0.8rem, 1vw, 1.4rem);
+    font-weight: 600;
+    color: var(--verde);
+}
+
+.imagen-camion{
+    width: 60%;
+    height: 100%;
+    display: block;
+    mask-image: linear-gradient(to right, var(--blanco) 90%, transparent);
+}
+
+.descripcion-camion{
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, var(--verde) 98%, transparent);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4%;
+}
+
+h1{
+    font-family: 'Montserrat', 'sans serif';
+    font-size: clamp(1.5rem, 1.5vw, 2rem);
+    color: var(--verde-oscuro-2);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.parrafo-camion-1{
+    font-family: 'Inconsolata', 'sans serif';
+    font-size: clamp(1.2rem, 1.2vw, 2rem);
+    font-weight: 600;
+    color: var(--blanco);
+    margin-bottom: 1.2rem;
+}
+
+.parrafo-camion-2{
+    font-family: 'Lato', 'sans serif';
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
+    font-weight: 300;
+    color: var(--blanco);
+    margin-bottom: 0.8rem;
+}
+
+h2{
+    font-family: 'PT Sans', 'sans serif';
+    font-size: clamp(1rem, 1.1vw, 1.8rem);
+    font-weight: 600;
+    color: var(--verde-oscuro-2);
+    margin-bottom: 1rem;
+}
+
+.lista{
+    width: 100%;
+    padding: 0 10px 0 10px;
+}
+
+ul{
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+li > i{
+    color: var(--blanco);
+}
+
+li{
+    color: var(--verde-oscuro-2);
+    font-family: 'Lato';
+    font-size: clamp(0.8rem, 0.8vw, 1.4rem);
+    font-weight: 600;
+}
+
+.boton-solicitar{
+    text-decoration: none;
+    color: var(--verde);
+    background-color: var(--blanco);
+    border-radius: 6px;
+    height: 36px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    font-family: 'Inconsolata';
+    font-weight: 600;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}

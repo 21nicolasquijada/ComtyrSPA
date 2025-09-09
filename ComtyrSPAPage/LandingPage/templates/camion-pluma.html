@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comtyr SPA - Camión Pluma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style-camion.css' %}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            <p class="primer-parrafo-logo">Comtyr SPA</p>
+        </div>
+        <ul class="menu" id="lista-anchors">
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#compra-y-venta">Compra y Venta</a></li>
+            <li><a href="#fletes">Fletes</a></li>
+            <li><a href="#arriendo-maquinaria">Arriendo Maquinaria</a></li>
+            <li><a href="#contacto-y-ubicacion">Contacto</a></li>
+            <li><a href="#seguridad">Normativas</a></li>
+        </ul>
+        <div class="menu-desplegable">
+            <button id="boton-menu">Menú</button>
+            <div class="acordeon-menu">
+                <div><a href="{% url 'index' %}">Inicio</a></div>
+                <div><a href="#nosotros">Sobre Nosotros</a><img src="{% static 'img/logo.png' %}" alt=""></div>
+                <div><a href="#compra-y-venta">Compra y Venta</a></div>
+                <div><a href="#contacto-y-ubicacion">Contacto</a></div>
+                <div><a href="#arriendo-maquinaria">Arriendo Maquinaria</a></div>
+                <div><a href="#fletes">Fletes</a></div>
+                <div><a href="#seguridad">Normativas</a></div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container-camion">
+            <img src="{% static 'img/camion_pluma.png' %}" alt="camion-pluma" class="imagen-camion">
+            <div class="descripcion-camion">
+                <h1>CAMIÓN PLUMA</h1>
+                <p class="parrafo-camion-1">Vehículo de transporte equipado con una grúa articulada diseñada para
+                    realizar maniobras de izaje de cargas pesadas. Este tipo de camión es especialmente utilizado en la
+                    carga y descarga de contenedores marítimos, permitiendo moverlos con precisión entre camiones,
+                    muelles y áreas de almacenamiento.</p>
+                <p class="parrafo-camion-2">Ofrecemos el arriendo de camión pluma para maniobras de izaje y montaje
+                    tanto dentro como fuera de la zona, contando con operadores capacitados y con certificaciones
+                    vigentes.</p>
+                <h2>"Maniobras precisas, servicio confiable"</h2>
+                <div class="lista">
+                    <ul>
+                        <li><i class="bi bi-patch-check"></i>Maniobras de Izaje</li>
+                        <li><i class="bi bi-patch-check"></i>Maniobras de montaje</li>
+                        <li><i class="bi bi-patch-check"></i>Carga Contenedores Maritimos</li>
+                        <li><i class="bi bi-patch-check"></i>Descarga Contenedores Maritimos</li>
+                        <li><i class="bi bi-patch-check"></i>Dentro y Fuera de la Zona</li>
+                    </ul>
+                </div>
+                <a class="boton-solicitar" href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank">Solicitar Servicio!</a>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
