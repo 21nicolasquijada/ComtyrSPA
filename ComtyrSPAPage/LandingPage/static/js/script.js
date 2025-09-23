@@ -6,26 +6,26 @@ const infos_contacto = document.querySelectorAll(".contacto-info");
 const menu_desplegable = document.querySelector(".menu-desplegable");
 const acordeon_menu = document.querySelector(".acordeon-menu");
 
-function toggleBotonMenu(){
-    if(window.innerWidth <= 800){
-        menu_desplegable.classList.add("show");
-        lista_anchors.classList.add("ocultar");
-    } 
+function toggleBotonMenu() {
+  if (window.innerWidth <= 800) {
+    menu_desplegable.classList.add("show");
+    lista_anchors.classList.add("ocultar");
+  }
 
-    if(window.innerWidth > 800){
-        menu_desplegable.classList.remove("show");
-        lista_anchors.classList.remove("ocultar");
-        lista_anchors.classList.add("menu");
-    }
+  if (window.innerWidth > 800) {
+    menu_desplegable.classList.remove("show");
+    lista_anchors.classList.remove("ocultar");
+    lista_anchors.classList.add("menu");
+  }
 }
 
 
-boton_menu.addEventListener("click",()=>{
-    if (acordeon_menu.style.maxHeight && acordeon_menu.style.maxHeight !== "0px") {
-        acordeon_menu.style.maxHeight = "0";
-    } else {
-        acordeon_menu.style.maxHeight = acordeon_menu.scrollHeight + "px";
-    }
+boton_menu.addEventListener("click", () => {
+  if (acordeon_menu.style.maxHeight && acordeon_menu.style.maxHeight !== "0px") {
+    acordeon_menu.style.maxHeight = "0";
+  } else {
+    acordeon_menu.style.maxHeight = acordeon_menu.scrollHeight + "px";
+  }
 });
 
 window.addEventListener("resize", toggleBotonMenu);
@@ -33,120 +33,61 @@ window.addEventListener("DOMContentLoaded", toggleBotonMenu);
 
 let index = 0;
 
-function cambiarSlide(){
-    
+function cambiarSlide() {
 
-    divs_carrusel.forEach(slide => {
-        slide.classList.remove("mostrar");
-    });
 
-     
-    divs_carrusel[index].classList.add("mostrar");
+  divs_carrusel.forEach(slide => {
+    slide.classList.remove("mostrar");
+  });
 
-    index = (index + 1) % divs_carrusel.length
+
+  divs_carrusel[index].classList.add("mostrar");
+
+  index = (index + 1) % divs_carrusel.length
 }
 
 cambiarSlide();
 
-setInterval(cambiarSlide,6000);
+setInterval(cambiarSlide, 6000);
 
 function ocultarTextoInfos() {
-    const array_new_divs_info = [
-        '<a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank"><i class="bi bi-whatsapp"></i><b>Whatsapp</b></a>',
-        '<a href=""><i class="bi bi-instagram"></i><b>Instagram</b></a>',
-        '<a href=""><i class="bi bi-envelope"></i><b>Gmail</b></a>',
-    ];
+  const array_new_divs_info = [
+    '<a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank"><i class="bi bi-whatsapp"></i><b>Whatsapp</b></a>',
+    '<a href=""><i class="bi bi-instagram"></i><b>Instagram</b></a>',
+    '<a href=""><i class="bi bi-envelope"></i><b>Gmail</b></a>',
+  ];
 
-    const array_new_divs_info_little_devices = [
-        '<a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank"><i class="bi bi-whatsapp"></i></a>',
-        '<a href=""><i class="bi bi-instagram"></i></a>',
-        '<a href=""><i class="bi bi-envelope"></i></a>',
-    ];
+  const array_new_divs_info_little_devices = [
+    '<a href="https://wa.me/56944093539?text=Hola%20quisiera%20más%20información" target="_blank"><i class="bi bi-whatsapp"></i></a>',
+    '<a href=""><i class="bi bi-instagram"></i></a>',
+    '<a href=""><i class="bi bi-envelope"></i></a>',
+  ];
 
-    const array_old_divs_info = [
-        '<i class="bi bi-whatsapp "></i><b>Whatsapp: +569 4409 3539</b>',
-        '<i class="bi bi-instagram"></i><b>Instagram: @comtyr.spa</b>',
-        '<i class="bi bi-envelope"></i><b>Gmail: comtyrspa@gmail.com | rodolfoarriagada.recicla@gmail.com</b>',
-    ];
+  const array_old_divs_info = [
+    '<i class="bi bi-whatsapp "></i><b>Whatsapp: +569 4409 3539</b>',
+    '<i class="bi bi-instagram"></i><b>Instagram: @comtyr.spa</b>',
+    '<i class="bi bi-envelope"></i><b>Gmail: comtyrspa@gmail.com | rodolfoarriagada.recicla@gmail.com</b>',
+  ];
 
-    let index = 0;
-    let data;
+  let index = 0;
+  let data;
 
-    if (window.matchMedia("(max-width: 580px)").matches) {
-        data = array_new_divs_info_little_devices;
-    } else if (window.matchMedia("(max-width: 1134px)").matches) {
-        data = array_new_divs_info;
-    } else {
-        data = array_old_divs_info;
-    }
+  if (window.matchMedia("(max-width: 580px)").matches) {
+    data = array_new_divs_info_little_devices;
+  } else if (window.matchMedia("(max-width: 1134px)").matches) {
+    data = array_new_divs_info;
+  } else {
+    data = array_old_divs_info;
+  }
 
-    infos_contacto.forEach(element => {
-        element.innerHTML = data[index];
-        index++;
-    });
+  infos_contacto.forEach(element => {
+    element.innerHTML = data[index];
+    index++;
+  });
 }
 
 window.addEventListener("resize", ocultarTextoInfos);
 window.addEventListener("load", ocultarTextoInfos);
-
-// var animation = { duration: 40000, easing: (t) => t }
-
-// var slider = new KeenSlider("#my-keen-slider", {
-//   loop: true,
-//   renderMode: "performance",
-//   drag: false,
-//   created(s) {
-//     s.moveToIdx(5, true, animation)
-//   },
-//   updated(s) {
-//     s.moveToIdx(s.track.details.abs + 5, true, animation)
-//   },
-//   animationEnded(s) {
-//     s.moveToIdx(s.track.details.abs + 5, true, animation)
-//   },
-// })
-
-// var slider_2 = new KeenSlider("#my-keen-slider-2", {
-//   loop: true,
-//   renderMode: "performance",
-//   drag: false,
-//   created(s) {
-//     s.moveToIdx(5, true, animation)
-//   },
-//   updated(s) {
-//     s.moveToIdx(s.track.details.abs + 5, true, animation)
-//   },
-//   animationEnded(s) {
-//     s.moveToIdx(s.track.details.abs + 5, true, animation)
-//   },
-// })
-
-// const parrafoCamionPluma = document.getElementById("parrafo-camion-pluma");
-// const parrafoGruaHorquilla = document.getElementById("parrafo-grua-horquilla");
-// const camionPlumaTitulo = document.querySelector(".camion-pluma-titulo");
-// const gruaHorquillaTitulo = document.querySelector(".grua-horquilla-titulo");
-
-// function textoCarrusel(){
-//   if(window.matchMedia("(max-width:862px)").matches){
-//     if(camionPlumaTitulo.classList.contains("ocultar")){
-//       camionPlumaTitulo.classList.remove("ocultar");
-//       parrafoCamionPluma.classList.add("ocultar");
-//       gruaHorquillaTitulo.classList.remove("ocultar");
-//       parrafoGruaHorquilla.classList.add("ocultar");
-//     }
-//   } else{
-//     if(parrafoCamionPluma.classList.contains("ocultar")){
-//       parrafoCamionPluma.classList.remove("ocultar");
-//       camionPlumaTitulo.classList.add("ocultar");
-//       parrafoGruaHorquilla.classList.remove("ocultar");
-//       gruaHorquillaTitulo.classList.add("ocultar");
-//     }
-//   }
-// }
-
-// window.addEventListener("resize",textoCarrusel);
-// window.addEventListener("load",textoCarrusel);
-
 
 const rectangulo = document.querySelector('.rectangulo-nosotros-1');
 const rectangulo_2 = document.querySelector('.rectangulo-nosotros-2')
@@ -158,7 +99,7 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting && entry.target === row_nosotros_1) {
       rectangulo.classList.add("transicion-rectangulo-nosotros");
-    } else if(entry.isIntersecting && entry.target === row_nosotros_2){
+    } else if (entry.isIntersecting && entry.target === row_nosotros_2) {
       rectangulo_2.classList.add("transicion-rectangulo-nosotros");
     }
   });
@@ -171,13 +112,13 @@ observer.observe(row_nosotros_2);
 
 const parrafos_carrusel = document.querySelectorAll(".texto-carrusel > p");
 
-function cambiarContenidoParrafoCarrusel(){
-  if(window.matchMedia("(max-width:800px)").matches){
-    parrafos_carrusel.forEach((parrafo)=>{
+function cambiarContenidoParrafoCarrusel() {
+  if (window.matchMedia("(max-width:800px)").matches) {
+    parrafos_carrusel.forEach((parrafo) => {
       parrafo.classList.add("ocultar");
     });
-  } else{
-    parrafos_carrusel.forEach((parrafo)=>{
+  } else {
+    parrafos_carrusel.forEach((parrafo) => {
       parrafo.classList.remove("ocultar");
     });
   }
@@ -191,32 +132,33 @@ const row_contacto = document.querySelector(".row-contacto");
 const camiones_fletes_divs = document.querySelectorAll('.camion-flete');
 const residuo_divs = document.querySelectorAll(".contenedor-residuos > div");
 
-
-const observer_contacto_nosotros = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      if(entry.target === row_ubicacion){
-          row_ubicacion.classList.add("bounce-in-right");
-          observer_contacto_nosotros.unobserve(row_ubicacion);
-      } else if(entry.target === row_contacto){
-          row_contacto.classList.add("bounce-in-left");
-          observer_contacto_nosotros.unobserve(row_contacto);
-      } else if(entry.target.classList.contains('camion-flete')){
-          entry.target.classList.add('aparecer');
-      } else if(entry.target.id === 'residuo-aluminio' || 'residuo-chatarra' || 'residuo-fierro' || 'residuo-cobre' || 'residuo-bronce' || 'residuo-acero'){
-          entry.target.classList.add('aparecer');
+const observer_contacto_nosotros = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (entry.target === row_ubicacion) {
+        row_ubicacion.classList.add("bounce-in-right");
+        observer_contacto_nosotros.unobserve(row_ubicacion);
+      } else if (entry.target === row_contacto) {
+        row_contacto.classList.add("bounce-in-left");
+        observer_contacto_nosotros.unobserve(row_contacto);
+      }
+      else if (entry.target.id === 'residuo-aluminio' || 'residuo-chatarra' || 'residuo-fierro' || 'residuo-cobre' || 'residuo-bronce' || 'residuo-acero') {
+        entry.target.classList.add('aparecer');
+      } else if (entry.target.id === fletes_section) {
+        barra_animada.classList.add('animar-barra');
+        console.log("hola");
       }
     }
   })
-},{
+}, {
   threshold: 0.7
 });
 
-camiones_fletes_divs.forEach((div)=>{
+camiones_fletes_divs.forEach((div) => {
   observer_contacto_nosotros.observe(div);
 });
 
-residuo_divs.forEach((div)=>{
+residuo_divs.forEach((div) => {
   observer_contacto_nosotros.observe(div);
 });
 
@@ -329,9 +271,9 @@ var slider_1 = new KeenSlider("#my-keen-slider-1", {
 });
 
 function sliderResponsive() {
-  if(window.matchMedia("(min-width:1400px)").matches){
+  if (window.matchMedia("(min-width:1400px)").matches) {
     slider_1.update({
-      slides: { perView: 3, spacing: 10}
+      slides: { perView: 3, spacing: 10 }
     })
   }
   else if (window.matchMedia("(min-width: 990px)").matches) {
@@ -358,3 +300,42 @@ document.querySelector(".arrow-left").addEventListener("click", () =>
 document.querySelector(".arrow-right").addEventListener("click", () =>
   slider_1.next()
 );
+
+const barra_animada = document.querySelector('.bar');
+const fletes_section = document.getElementById('fletes');
+
+const observer_bar = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && entry.target.id === "fletes") {
+      barra_animada.classList.add("animar-barra");
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+observer_bar.observe(fletes);
+
+
+const camion_plano_div = document.querySelector('.camion-plano');
+const camion_plano_img = document.querySelector('.imagen-camion-plano > img');
+const imgUrl = camion_plano_img.dataset.imgUrl;
+
+function responsiveFletes() {
+  if (window.matchMedia("(max-width:1160px)").matches) {
+    camion_plano_div.innerHTML = `
+  <div class="camion-plano">
+    <div class="texto-camion-plano">
+      <h4>Camión Plano</h4>
+      <p>Contamos con camiones planos abiertos de 2, 3, 5, 10 y 15 toneladas, ideales para el transporte de carga en general. Ofrecemos servicio de fletes tanto dentro como fuera de la zona.</p>
+    </div>
+    <div class="imagen-camion-plano">
+      <img src="${imgUrl}" alt="imagen-camion-plano">
+    </div>
+  </div>
+`;
+  }
+}
+
+window.addEventListener('resize', responsiveFletes);
+window.addEventListener('load', responsiveFletes);

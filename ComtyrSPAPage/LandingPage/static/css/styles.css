@@ -235,6 +235,7 @@ h1{
 
 #boton-menu{
     margin-left: auto;
+    margin-right: 10px;
     width: 200px;
     height: 30px;
     border: none;
@@ -595,12 +596,225 @@ h1{
     }
 }
 
-#fletes{
-    min-height: 100vh;
-    background-image: url('../img/fondo-fletes.svg');
+.presentacion-fletes{
+    width: 100%;
+    height: 700px;
+    position: relative;
 }
 
-#fletes > h3{
+.overlay-fletes{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(47, 59, 44, 0.8);
+}
+
+.presentacion-fletes > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.texto-fletes{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    z-index: 3;
+    transform: translateY(-50%);
+    max-width:60%;
+}
+
+@media (min-width:1700px){
+    .texto-fletes{
+        max-width: 50%;
+    }
+}
+
+.texto-fletes > h3{
+    color: var(--blanco);
+    font-family: 'Lato';
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.texto-fletes > p{
+    color: var(--blanco);
+    font-family: 'Montserrat';
+    font-size: 1.2rem;
+}
+
+.bar{
+    width: 50px;
+    height: 10px;
+    background-color: var(--verde);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+
+.animar-barra{
+    animation: bar-transition 1s linear forwards;
+}
+
+@keyframes bar-transition {
+  0% {
+    width: 50px;
+  }
+
+  60% {
+    width: 100%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+.camion-pluma,
+.camion-plano {
+    width: 100%;
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- Camión Pluma ---- */
+.texto-camion-pluma {
+    width: 75%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--verde-oscuro-2);
+    clip-path: polygon(0 0, 85% 0, 70% 100%, 0% 100%);
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 25% 0 10%;
+}
+
+.imagen-camion-pluma {
+    width: 60%;
+    height: 100%;
+    top: 0;
+    left: 40%;
+    position: absolute;
+    z-index: 5;
+    background-color: var(--verde-oscuro-2);
+}
+
+.imagen-camion-pluma img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---- Camión Plano ---- */
+.texto-camion-plano {
+    width: 75%;
+    height: 100%;
+    top: 0;
+    left: 40%;
+    background-color: var(--verde-oscuro-2);
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20% 0 20%;
+}
+
+.imagen-camion-plano {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 61%;
+    height: 100%;
+    clip-path: polygon(0 0, 85% 0, 70% 100%, 0% 100%);
+    z-index: 10;
+    background-color: var(--verde-oscuro-2);
+}
+
+.imagen-camion-plano img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---- Títulos y párrafos ---- */
+.texto-camion-pluma h4,
+.texto-camion-plano h4 {
+    color: var(--blanco);
+    font-family: 'Lato';
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: start;
+}
+
+.texto-camion-pluma p,
+.texto-camion-plano p {
+    color: var(--blanco);
+    font-family: 'Montserrat';
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+/* --------- RESPONSIVE --------- */
+@media (max-width: 992px) {
+    .camion-pluma,
+    .camion-plano {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .texto-camion-pluma,
+    .texto-camion-plano,
+    .imagen-camion-pluma,
+    .imagen-camion-plano {
+        position: relative;
+        clip-path: none;
+        width: 100%;
+        height: auto;
+        left: 0;
+        padding: 2rem;
+    }
+
+    .texto-camion-pluma h4,
+    .texto-camion-plano h4 {
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    .texto-camion-pluma p,
+    .texto-camion-plano p {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .imagen-camion-pluma img,
+    .imagen-camion-plano img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}   
+
+/* #fletes > h3{
     font-size: clamp(1rem, 4vw, 2.6rem);
     font-family: 'Montserrat';
     font-weight: 800;
@@ -636,20 +850,20 @@ h1{
     transform: translateY(100px);
     opacity: 0;
     transition: transform 0.5s linear, opacity 0.5s linear;
-}
+} */
 
 .aparecer{
     transform: translateY(0) !important;
     opacity: 1 !important;
 }
 
-.camion-flete > img{
+/* .camion-flete > img{
     width: 100%;
     padding: 20px;
     height: 400px;
-}
+} */
 
-.contenido-camion-flete > h4{
+/* .contenido-camion-flete > h4{
     font-family: 'Rubik', 'sans-serif';
     padding: 20px;
     font-size: clamp(1.1rem, 1.5vw, 1.8rem);
@@ -683,9 +897,9 @@ h1{
     padding: 10px;
     box-shadow: 3px 3px 6px rgba(0, 0 , 0, 0.2);
     font-size: clamp(0.7rem, 1vw, 1rem);
-}
+} */
 
-.camion{
+/* .camion{
     width: 20%;
     height: 63vh;
     border: 2px solid black;
@@ -694,7 +908,7 @@ h1{
 .camion > img{
     padding: 20px;
     width: 100%;
-}
+} */
 
 #arriendo-maquinaria{
     min-height: 100vh;
@@ -730,35 +944,7 @@ h1{
     width: 100%;
     height: 700px;
     margin-top: 20px;
-    
 }
-
-.camion-pluma{
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(47, 59, 44, 0.6);
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-.camion-pluma > p{
-    width: 40%;
-    padding: 40px;
-    font-family: 'Rubik','sans-serif';
-    font-weight: 400;
-    font-size: clamp(1em, 1.5vw, 1.5em);
-    color: var(--blanco);
-}
-
-.camion-arriendo{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 
 @media (max-width:640px) {
     .contenedor-fletes{
@@ -863,28 +1049,6 @@ h1{
         padding-left: 0;
     }
 
-}
-
-@media (max-width:862px){
-    .camion-pluma{
-        flex-direction: column;
-        height:400px;
-        width: 100%;
-       justify-content: start;
-    }
-
-    .camion-pluma > p{
-        width: 90%;
-        padding: 0;
- 
-    }
-}
-
-.camion-pluma-titulo, .grua-horquilla-titulo{
-    font-family: 'Montserrat', 'sans-serif';
-    font-size: clamp(1.4rem, 1.7vw, 3rem);
-    margin: 10px;
-    color: var(--verde);
 }
 
 @media (max-width: 480px){
@@ -1383,6 +1547,7 @@ h1{
         flex-direction: column;
         min-height: 40vh;
         justify-content: center;
+        background: var(--blanco);
     }
 
     .logo-div {
