@@ -758,7 +758,7 @@ h1{
 .texto-camion-pluma h4,
 .texto-camion-plano h4 {
     color: var(--blanco);
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-size: 4rem;
     font-weight: 900;
     margin-bottom: 1rem;
@@ -769,7 +769,7 @@ h1{
 .texto-camion-pluma p,
 .texto-camion-plano p {
     color: var(--blanco);
-    font-family: 'Montserrat';
+    font-family: 'PT Sans';
     font-size: 1.8rem;
     line-height: 1.6;
 }
@@ -1198,9 +1198,10 @@ h1{
 }
 
 .row-contacto > h3{
-    font-family: 'Montserrat';
-    font-size:  3rem;
+    font-family: 'Inter';
+    font-size:  clamp(2.5rem, 4vw, 4rem);
     color: var(--verde-oscuro);
+    font-weight: 800;
 }
 
 .iconos-contacto{
@@ -1226,9 +1227,10 @@ h1{
 }
 
 .row-ubicacion > h3{
-    font-family: 'Montserrat';
+    font-family: 'Inter';
     font-size: clamp(1.8rem, 3vw, 3rem);
     color: var(--blanco);
+    margin-top: 10px;
 }
 
 .row-ubicacion> iframe{
@@ -1656,9 +1658,9 @@ h1{
 }
 
 .div-seguridad > h4{
-    font-family: 'Rubik';
+    font-family: 'Montserrat';
     text-align: center;
-    font-size: clamp(2rem, 1.8vw, 1.5rem);
+    font-size: clamp(1.2rem, 2.5vw, 4rem);
     padding: 10px;
     margin-bottom: 40px;
     position: relative;
@@ -1719,8 +1721,9 @@ h1{
 
 .card-slide-content > h5{
     font-family: 'Rubik', 'sans-serif';
-    font-size: clamp(0.8rem,1.6vw,1.2rem);
+    font-size: clamp(1rem,1.6vw,1.2rem);
     color: var(--verde-oscuro-2);
+    text-align: center;
 }
 
 .card-slide-content > p{
@@ -1729,6 +1732,7 @@ h1{
     color: var(--verde-oscuro-2);
     font-weight: 500;
     text-align: center;
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
 
 }
 
@@ -1736,4 +1740,38 @@ h1{
     .contenedor-slider-cards{
         padding: 10px;
     }
+}
+
+/* Estilo del Botón "Ver más" */
+.btn-ver-mas {
+    /* Reseteo y apariencia básica */
+    text-decoration: none;
+    display: inline-block; /* Permite que el padding y margen funcionen */
+    margin-top: 15px; /* Espacio entre el párrafo y el botón */
+    
+    /* Colores y tipografía (Invertimos: Fondo claro, texto oscuro) */
+    background-color: var(--color-text-light, #F0F0F0); /* Fondo blanco/claro */
+    color: var(--color-primary, #2F3B2C); /* Texto oscuro (el color de fondo del bloque) */
+    
+    /* Dimensiones y forma */
+    padding: 10px 20px;
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    border: 1px solid var(--color-text-light, #F0F0F0); /* Borde sutil para definir el área */
+    
+    /* Fuente */
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: 'Lato';
+    
+    /* Transición y efecto hover */
+    transition: all 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+    /* Efecto al pasar el mouse (estilo profesional y sutil) */
+    background-color: transparent; /* Fondo transparente */
+    color: var(--color-text-light, #F0F0F0); /* Texto blanco/claro */
+    border-color: var(--color-text-light, #F0F0F0); /* El borde se mantiene visible */
+    transform: translateY(-2px); /* Pequeño levantamiento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

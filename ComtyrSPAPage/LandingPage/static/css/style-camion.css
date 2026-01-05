@@ -1,280 +1,379 @@
+/* ---------------------------------
+   1. RESET Y VARIABLES GLOBALES
+   --------------------------------- */
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-:root{
-    --blanco: #faf3e0;
-    --verde :#58744B;
-    --cafe: #42251F;
-    --verde-oscuro : #466038;
-    --verde-oscuro-1: #3A4D37;
-    --verde-oscuro-2: #2F3B2C;
-    --negro: #000000;
-}
-
-.navbar{
-    z-index: 1000;
-    width: 100%;
-    height: 10vh;
-    display: flex; 
-    align-items: center;
-    background-color: rgba(47, 59, 44, 0.9);
-}
-
-.logo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 10%;
-    height: 100%;
-}
-
-.logo > a {
-  width: 60px;
-  height: 50px;
-}
-
-.logo > a > img {
-    width: 100%;
-    height: 100%;
-}
-
-@media (max-width:800px){
-    .logo{
-        width: 20%;
-    }
-
-    .logo > a{
-        width: 50px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 546px){
-    .logo{
-        width: 30%;
-    }
-}
-
-.menu{
-    display: flex;
-    margin-left: auto;
-    gap: 1.2rem;
-    list-style: none;
-    margin-right: 10px;
+/* Variables de color y tipografía */
+:root {
+    --color-primary: #2F3B2C;      /* Verde Oscuro (Fondo del contenido) */
+    --color-text-light: #F0F0F0;   /* Blanco Suave */
+    --color-accent: #FFC000;       /* Amarillo/Naranja (Botón y acentos) */
+    --color-nav-bg: rgba(47, 59, 44, 1); /* Fondo del Navbar */
+    --color-logo-text: #58744B;    /* Verde claro del logo */
     
+    --font-primary: 'Inter', sans-serif;
 }
 
-.menu-desplegable{
-    margin-left: auto;
-    display: none;
-    position: relative;
+/* Aplicamos Inter al cuerpo, asumiendo que quieres reemplazar tus múltiples fuentes */
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-primary);
 }
 
-#boton-menu{
-    margin-left: auto;
-    width: 200px;
-    height: 30px;
-    border: none;
-    font-family: "Montserrat";
-    font-size: clamp(0.8rem, 2vw, 1rem);
-    font-weight: 600;
-    border-bottom: 2px solid var(--blanco);
-    color: var(--verde);
-    border-radius: 1px;
-    background-color: rgba(0, 0, 0, 0);
-}
+/* ---------------------------------
+   2. NAVBAR Y MENÚ DESPLEGABLE (ACTUALIZADO)
+   --------------------------------- */
 
-.acordeon-menu{
-    overflow: hidden;
-    position: absolute;
-    width: 200px;
-    top: 100%;
-    left: 0;
-    max-height: 0;
-    transition: max-height 0.1s ease-in-out;
-}
-
-@media (max-width: 380px) {
-    #boton-menu{
-        width: 160px;
-    }
-
-    .acordeon-menu{
-        width: 160px;
-    }
-}
-
-.acordeon-menu > div {
-    background-color: var(--blanco);
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+.navbar {
+    width: 100%;
+    height: 80px; 
     display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: var(--color-nav-bg);
+    padding: 0 40px;
+    z-index: 1000;
+    position: sticky; /* Sticky para que el menú se quede arriba */
+    top: 0;
 }
 
-.acordeon-menu > div > img{
-    width: 26px;
-    height: auto;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.acordeon-menu > div > i{
-    font-size: larger;
-    color: var(--verde);
+.logo a img {
+    width: 60px;
+    height: 60px;
+    display: block;
 }
 
-.acordeon-menu > div > a{
-    text-decoration: none;
-    font-family: "Montserrat";
-    font-size: clamp(0.8rem, 1.4vw, 2rem);
-    padding: 0 4px 0 4px;
-    color: var(--verde);
-    font-weight: 600;
-}
-
-.navbar > ul > li > a{
-    all: unset;
-    cursor: pointer;
-    text-decoration: none;
-    transition: color 0.5s ease-in-out;
-}
-
-.navbar > ul > li > a:hover{
-    color: var(--verde);
-}
-
-.navbar > ul > li{
-    white-space: nowrap;
-    font-family: "Montserrat";
+.logo-text {
     font-weight: 700;
-    color: var(--blanco);
-    font-size: clamp(0.4rem, 1.2vw, 1.08rem);
+    color: var(--color-logo-text);
+    font-size: 1.5rem;
+    margin: 0;
 }
 
-.ocultar{
-    display: none;
-}
-
-.show{
-    display: block;
-}
-
-.container-camion{
-    width: 100%;
-    height: 90vh;
+/* Menú de Escritorio */
+.menu {
     display: flex;
-}
-
-.primer-parrafo-logo{
-    text-align: center;
-    font-family: "Montserrat";
-    font-size: clamp(0.8rem, 1vw, 1.4rem);
-    font-weight: 600;
-    color: var(--verde);
-}
-
-.imagen-camion{
-    width: 60%;
-    height: 100%;
-    display: block;
-    mask-image: linear-gradient(to right, var(--blanco) 90%, transparent);
-}
-
-.descripcion-camion{
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to left, var(--verde) 98%, transparent);
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    padding: 4%;
-}
-
-h1{
-    font-family: 'Montserrat', 'sans serif';
-    font-size: clamp(1.5rem, 1.5vw, 2rem);
-    color: var(--verde-oscuro-2);
-    font-weight: 500;
-    margin-bottom: 2rem;
-}
-
-.parrafo-camion-1{
-    font-family: 'Inconsolata', 'sans serif';
-    font-size: clamp(1.2rem, 1.2vw, 2rem);
-    font-weight: 600;
-    color: var(--blanco);
-    margin-bottom: 1.2rem;
-}
-
-.parrafo-camion-2{
-    font-family: 'Lato', 'sans serif';
-    font-size: clamp(0.8rem, 1vw, 1.5rem);
-    font-weight: 300;
-    color: var(--blanco);
-    margin-bottom: 0.8rem;
-}
-
-h2{
-    font-family: 'PT Sans', 'sans serif';
-    font-size: clamp(1rem, 1.1vw, 1.8rem);
-    font-weight: 600;
-    color: var(--verde-oscuro-2);
-    margin-bottom: 1rem;
-}
-
-.lista{
-    width: 100%;
-    padding: 0 10px 0 10px;
-}
-
-ul{
+    margin-left: auto;
     list-style: none;
-    margin-bottom: 1rem;
+    gap: 20px;
+    padding: 0;
 }
 
-ul li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-li > i{
-    color: var(--blanco);
-}
-
-li{
-    color: var(--verde-oscuro-2);
-    font-family: 'Lato';
-    font-size: clamp(0.8rem, 0.8vw, 1.4rem);
-    font-weight: 600;
-}
-
-.boton-solicitar{
+.menu a {
     text-decoration: none;
-    color: var(--verde);
-    background-color: var(--blanco);
-    border-radius: 6px;
-    height: 36px;
-    text-align: center;
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--color-logo-text);
+}
+
+/* -------------------- ESTILOS DEL MENÚ MÓVIL -------------------- */
+
+/* Botón Hamburguesa */
+.menu-toggle {
+    margin-left: auto;
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 2rem; /* Tamaño de icono visible */
+    cursor: pointer;
+    padding: 5px 10px;
+    z-index: 1001; /* Asegura que esté sobre el menú desplegable */
+}
+
+/* Menú Móvil Desplegable */
+.mobile-menu-dropdown {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 80px; /* Debajo de la altura del navbar */
+    right: 0;
+    width: 100%;
+    max-width: 300px; /* Limita el ancho del menú desplegable */
+    background-color: var(--color-primary);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    border-radius: 0 0 5px 5px; /* Bordes redondeados en la parte inferior */
+}
+
+.mobile-menu-dropdown a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--color-text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.mobile-menu-dropdown a:hover {
+    background-color: rgba(90, 116, 75, 0.8); /* Usando un tono más claro basado en --color-logo-text */
+    color: var(--color-accent);
+}
+
+/* Clase JS para MOSTRAR el menú */
+.mobile-menu-dropdown.is-open {
+    display: block;
+}
+
+
+/* ---------------------------------
+   3. SECCIÓN DE DETALLE DE SERVICIO (HERO)
+   --------------------------------- */
+   
+/* ... (El resto de estilos de esta sección no cambiaron) ... */
+   
+.service-detail-section {
+    width: 100%;
+    display: flex;
+    min-height: calc(100vh - 80px); 
+}
+
+.service-image-block {
+    width: 60%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.service-main-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.service-content-block {
+    width: 40%;
+    flex-shrink: 0;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 50px;
+}
+
+.service-title {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    color: var(--color-text-light);
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.service-description-primary {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    font-weight: 500;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
+
+.service-description-secondary {
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
+    font-weight: 300;
+    color: var(--color-text-light);
+    margin-bottom: 30px;
+}
+
+.service-claim {
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
+    font-weight: 700;
+    color: var(--color-logo-text); 
+    margin-bottom: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-features ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.service-features ul li {
     display: flex;
     align-items: center;
-    padding: 6px;
-    font-family: 'Inconsolata';
+    gap: 10px;
+    color: var(--color-text-light);
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
     font-weight: 600;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 8px;
+}
+
+.service-features ul li i {
+    color: var(--color-logo-text); 
+    font-size: 1.1em;
+}
+
+.btn-primary-action {
+    text-decoration: none;
+    color: var(--color-primary);
+    background-color: var(--color-logo-text);
+    border-radius: 4px;
+    padding: 14px 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    align-self: flex-start;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary-action:hover {
+    background-color: #f8c944;
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------
+   4. RESPONSIVE (Móvil y Tablet)
+   --------------------------------- */
+
+@media (max-width: 992px) {
+    /* Ajuste de estructura y imagen para móvil */
+    .service-detail-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .service-image-block {
+        width: 100%;
+        min-height: 250px;
+    }
+
+    .service-content-block {
+        width: 100%;
+        padding: 40px 30px;
+    }
+    
+    .service-title {
+        font-size: 3rem;
+    }
+    
+    .btn-primary-action {
+        align-self: stretch;
+        text-align: center;
+    }
+
+    /* Oculta el menú de escritorio y muestra el botón hamburguesa */
+    .menu {
+        display: none; 
+    }
+    
+    .menu-toggle {
+        display: block; /* Muestra el botón de hamburguesa en móvil */
+    }
+    
+    .navbar {
+        padding: 0 20px;
+        height: 70px; /* Navbar un poco más pequeño en móvil */
+    }
+    
+    .mobile-menu-dropdown {
+        top: 70px; /* Ajusta la posición del menú desplegable a la nueva altura del navbar */
+    }
+}
+
+@media (max-width: 576px) {
+    .service-title {
+        font-size: 2.2rem;
+    }
+    
+    .service-content-block {
+        padding: 30px 20px;
+    }
+}
+
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.footer-contenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  color: var(--color-text-light);
+  font-family: 'Rubik';
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--color-logo-text);
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 15px;
+  font-family: 'Rubik';
+}
+
+.titulo-empresa-footer{
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer{
+    width: 60px;
+    height: 60px;
+    margin: 6px;
+}
+
+.footer-col > .titulo-empresa-footer > h2, .footer-col > h3{
+    font-family: 'Montserrat';
+    color: var(--color-logo-text);
+}
+
+.footer-col > p{
+    font-family: 'Rubik';
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- RESPONSIVE --- */
+@media (min-width: 600px) {
+  .footer-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .footer-contenedor {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

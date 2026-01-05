@@ -6,3 +6,6 @@ def index(request):
 
 def camion_pluma(request):
     return render(request, 'camion-pluma.html')
+
+def camion_plano(request):
+    return render(request, 'camion-plano.html')
